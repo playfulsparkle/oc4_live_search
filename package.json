@@ -1,0 +1,27 @@
+{
+  "name": "oc4_live_search",
+  "version": "1.0.0",
+  "description": "Playful Sparkle - Live Search for OpenCart 4",
+  "main": "index.js",
+  "scripts": {
+    "compress": "node compress.js"
+  },
+  "keywords": [
+    "opencart",
+    "oc",
+    "playfulsparkle",
+    "live search"
+  ],
+  "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
+  "license": "GPL",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "csso": "^5.0.5",
+    "fs": "^0.0.1-security",
+    "terser": "^5.36.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playfulsparkle/oc4_live_search.git"
+  }
+}
