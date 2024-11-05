@@ -5,7 +5,7 @@
       var $dropdown = $("#" + $(element).attr("data-live-search-target"));
       var debounceTimer;
       var currentIndex = -1;
-      var items;
+      var items = [];
       var canRunFocus = true;
 
       $.extend(this, option);
@@ -29,76 +29,73 @@
         }
       });
 
-      $(document).delegate('.ps-live-search-item', 'keydown', function (e) {
-        if (items && items.length) {
+      $(document).on('keydown', '.ps-live-search-item', function (e) {
+        if (items.length) {
           items.attr('tabindex', '-1');
         }
 
         switch (e.key) {
-            case 'ArrowDown':
-            case 'Down':
-                if (currentIndex < items.length - 1) {
-                    currentIndex += 1;
-                    items.eq(currentIndex).attr('tabindex', '0').focus();
-                } else {
-                  element.focusToInput();
-                }
-                e.preventDefault();
-              break;
-            case 'Esc':
-            case 'Escape':
-                e.preventDefault();
-                element.closeDropdown();
-              break;
-            case 'Up':
-            case 'ArrowUp':
-                if (currentIndex > 0) {
-                    currentIndex -= 1;
-                    items.eq(currentIndex).attr('tabindex', '0').focus();
-                } else {
-                    element.focusToInput();
-                }
-                e.preventDefault();
-              break;
-            default:
-              break;
-          }
+          case 'ArrowDown':
+          case 'Down':
+            if (currentIndex < items.length - 1) {
+              currentIndex += 1;
+              items.eq(currentIndex).attr('tabindex', '0').focus();
+            } else {
+              element.focusToInput();
+            }
+            e.preventDefault();
+            break;
+          case 'Escape':
+          case 'Esc':
+            e.preventDefault();
+            element.closeDropdown();
+            break;
+          case 'Up':
+          case 'ArrowUp':
+            if (currentIndex > 0) {
+              currentIndex -= 1;
+              items.eq(currentIndex).attr('tabindex', '0').focus();
+            } else {
+              element.focusToInput();
+            }
+            e.preventDefault();
+            break;
+          default:
+            break;
+        }
       });
 
       $(element).on("keydown", function (e) {
-        if (items && items.length) {
+        if (items.length) {
           items.attr('tabindex', '-1');
         }
 
         switch (e.key) {
-            case 'ArrowDown':
-            case 'Down':
-                currentIndex = 0;
-                items.eq(currentIndex).attr('tabindex', '0').focus();
-                e.preventDefault();
-              break;
-            case 'Esc':
-            case 'Escape':
-                e.preventDefault();
-                element.closeDropdown();
-              break;
-            case 'Up':
-            case 'ArrowUp':
-                currentIndex = items.length - 1;
-                items.eq(currentIndex).attr('tabindex', '0').focus();
-                e.preventDefault();
-              break;
-            default:
-              break;
-          }
+          case 'ArrowDown':
+          case 'Down':
+            currentIndex = 0;
+            items.eq(currentIndex).attr('tabindex', '0').focus();
+            e.preventDefault();
+            break;
+          case 'Escape':
+          case 'Esc':
+            e.preventDefault();
+            element.closeDropdown();
+            break;
+          case 'Up':
+          case 'ArrowUp':
+            currentIndex = items.length - 1;
+            items.eq(currentIndex).attr('tabindex', '0').focus();
+            e.preventDefault();
+            break;
+          default:
+            break;
+        }
       });
 
       $(element).on("input", function (e) {
         clearTimeout(debounceTimer);
-
-        debounceTimer = setTimeout(function () {
-            element.request();
-        }, this.options.input_delay);
+        debounceTimer = setTimeout(function () { element.request(); }, this.options.input_delay);
       });
 
       this.focusToInput = function () {
@@ -111,14 +108,13 @@
       this.closeDropdown = function () {
         $dropdown.removeClass("show");
         $(element).attr("aria-expanded", "false");
+        canRunFocus = true;
       };
 
-      this.showDropdown = function() {
+      this.showDropdown = function () {
         $dropdown.html('<li><span class="ps-live-search-item-loading"><i class="fa-solid fa-circle-notch fa-spin"></i></span></li>');
         $dropdown.addClass("show");
-
         $(element).attr("aria-expanded", "true");
-
         currentIndex = -1;
       };
 
@@ -126,9 +122,9 @@
         var query = $(element).val();
 
         if (query.length > 0) {
-            element.showDropdown();
+          element.showDropdown();
 
-            this.source(query, $.proxy(this.response, this));
+          this.source(query, $.proxy(this.response, this));
         }
       };
 
@@ -137,83 +133,83 @@
         var query = $(element).val();
         var url_more = $('base').attr('href') + 'index.php?route=product/search&language=' + $dropdown.attr('data-lang') + '&search=' + encodeURIComponent(query);
 
-        html += `<li><span class="ps-live-search-subheader">${this.translations.text_showing_results.replace('%search%', query)}</span></li>`;
+        html += '<li><span class="ps-live-search-subheader">' + this.translations.text_showing_results.replace('%search%', query) + '</span></li>';
 
         if (json.products.status) {
-            html += `<li><h3 class="ps-live-search-header">${this.translations.heading_products}</h3></li>`;
+          html += '<li><h3 class="ps-live-search-header">' + this.translations.heading_products + '</h3></li>';
 
-            if (json.products.data.length > 0) {
-                for (var product of json.products.data) {
-                    html += `<li><a href="${product.href}" class="ps-live-search-item">`;
-                    if (product.thumb) {
-                        html += `<img class="thumb" src="${product.thumb}" alt="${product.name}" width="${product.thumb_width}" height="${product.thumb_height}">`;
-                    }
-                    html += `<span class="info"><strong class="name">${product.name}</strong>`;
-                    if (product.description) {
-                        html += `<span class="description">${product.description}</span>`;
-                    }
-                    html += `</span><span class="prices">`;
-                    if (!product.special) {
-                        html += `<span class="price-new">${product.price}</span>`;
-                    } else {
-                        html += `<span class="price-old">${product.price}</span>`;
-                        html += `<span class="price-new">${product.special}</span>`;
-                    }
-                    html += `<span class="price-tax">${product.tax}</span></span></a></li>`;
-                }
-            } else {
-                html += `<li><span class="ps-live-search-item-text">${this.translations.text_no_results}</span></li>`;
+          if (json.products.data.length > 0) {
+            for (var product of json.products.data) {
+              html += '<li><a href="' + product.href + '" class="ps-live-search-item">';
+              if (product.thumb) {
+                html += '<img class="thumb" src="' + product.thumb + '" alt="' + product.name + '" width="' + product.thumb_width + '" height="' + product.thumb_height + '">';
+              }
+              html += '<span class="info"><strong class="name">' + product.name + '</strong>';
+              if (product.description) {
+                html += '<span class="description">' + product.description + '</span>';
+              }
+              html += '</span><span class="prices">';
+              if (!product.special) {
+                html += '<span class="price-new">' + product.price + '</span>';
+              } else {
+                html += '<span class="price-old">' + product.price + '</span>';
+                html += '<span class="price-new">' + product.special + '</span>';
+              }
+              html += '<span class="price-tax">' + product.tax + '</span></span></a></li>';
             }
+          } else {
+            html += '<li><span class="ps-live-search-item-text">' + this.translations.text_no_results + '</span></li>';
+          }
         }
 
         if (json.categories.status) {
-            html += `<li><h3 class="ps-live-search-header">${this.translations.heading_categories}</h3></li>`;
+          html += '<li><h3 class="ps-live-search-header">' + this.translations.heading_categories + '</h3></li>';
 
-            if (json.categories.data.length > 0) {
-                for (var category of json.categories.data) {
-                    html += `<li><a href="${category.href}" class="ps-live-search-item">`;
-                    if (category.thumb) {
-                        html += `<img class="thumb" src="${category.thumb}" alt="${category.name}" width="${category.thumb_width}" height="${category.thumb_height}">`;
-                    }
-                    html += `<span class="info"><span class="name">${category.name}</span></span></a></li>`;
-                }
-            } else {
-                html += `<li><span class="ps-live-search-item-text">${this.translations.text_no_results}</span></li>`;
+          if (json.categories.data.length > 0) {
+            for (var category of json.categories.data) {
+              html += '<li><a href="' + category.href + '" class="ps-live-search-item">';
+              if (category.thumb) {
+                html += '<img class="thumb" src="' + category.thumb + '" alt="' + category.name + '" width="' + category.thumb_width + '" height="' + category.thumb_height + '">';
+              }
+              html += '<span class="info"><span class="name">' + category.name + '</span></span></a></li>';
             }
+          } else {
+            html += '<li><span class="ps-live-search-item-text">' + this.translations.text_no_results + '</span></li>';
+          }
         }
 
         if (json.manufacturers.status) {
-            html += `<li><h3 class="ps-live-search-header">${this.translations.heading_manufacturers}</h3></li>`;
+          html += '<li><h3 class="ps-live-search-header">' + this.translations.heading_manufacturers + '</h3></li>';
 
-            if (json.manufacturers.data.length > 0) {
-                for (var manufacturer of json.manufacturers.data) {
-                    html += `<li><a href="${manufacturer.href}" class="ps-live-search-item">`;
-                    if (manufacturer.thumb) {
-                        html += `<img class="thumb" src="${manufacturer.thumb}" alt="${manufacturer.name}" width="${manufacturer.thumb_width}" height="${manufacturer.thumb_height}">`;
-                    }
-                    html += `<span class="info"><span class="name">${manufacturer.name}</span></span></a></li>`;
-                }
-            } else {
-                html += `<li><span class="ps-live-search-item-text">${this.translations.text_no_results}</span></li>`;
+          if (json.manufacturers.data.length > 0) {
+            for (var manufacturer of json.manufacturers.data) {
+              html += '<li><a href="' + manufacturer.href + '" class="ps-live-search-item">';
+              if (manufacturer.thumb) {
+                html += '<img class="thumb" src="' + manufacturer.thumb + '" alt="' + manufacturer.name + '" width="' + manufacturer.thumb_width + '" height="' + manufacturer.thumb_height + '">';
+              }
+              html += '<span class="info"><span class="name">' + manufacturer.name + '</span></span></a></li>';
             }
+          } else {
+            html += '<li><span class="ps-live-search-item-text">' + this.translations.text_no_results + '</span></li>';
+          }
         }
 
         if (json.informations.status) {
-            html += `<li><h3 class="ps-live-search-header">${this.translations.heading_informations}</h3></li>`;
+          html += '<li><h3 class="ps-live-search-header">' + this.translations.heading_informations + '</h3></li>';
 
-            if (json.informations.data.length > 0) {
-                for (var information of json.informations.data) {
-                    html += `<li><a href="${information.href}" class="ps-live-search-item">${information.name}</a></li>`;
-                }
-            } else {
-                html += `<li><span class="ps-live-search-item-text">${this.translations.text_no_results}</span></li>`;
+          if (json.informations.data.length > 0) {
+            for (var information of json.informations.data) {
+              html += '<li><a href="' + information.href + '" class="ps-live-search-item">' + information.name + '</a></li>';
             }
+          } else {
+            html += '<li><span class="ps-live-search-item-text">' + this.translations.text_no_results + '</span></li>';
+          }
         }
 
         if (json.products.status && json.products.data.length > 0) {
-            html += `<li><a href="${url_more}" class="ps-live-search-more">${this.translations.text_all_results} <i class="fa-solid fa-caret-down"></i></a></li>`;
+          html += '<li><a href="' + url_more + '" class="ps-live-search-more">' + this.translations.text_all_results + ' <i class="fa-solid fa-caret-down"></i></a></li>';
         } else {
-            html += `<li><span class="ps-live-search-more">${this.translations.text_all_results} <i class="fa-solid fa-caret-down"></i></span></li>`;
+          html += '<li><span class="ps-live-search-more">' + this.translations.text_all_results + ' <i class="fa-solid fa-caret-down"></i></span></li>';
         }
 
         $dropdown.html(html);
