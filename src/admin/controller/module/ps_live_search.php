@@ -52,6 +52,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
         $data['module_ps_live_search_status'] = $this->config->get('module_ps_live_search_status');
         $data['module_ps_live_search_input_delay'] = $this->config->get('module_ps_live_search_input_delay');
+        $data['module_ps_live_search_input_min_chars'] = $this->config->get('module_ps_live_search_input_min_chars');
 
         $data['module_ps_live_search_product_status'] = $this->config->get('module_ps_live_search_product_status');
         $data['module_ps_live_search_product_description'] = $this->config->get('module_ps_live_search_product_description');
@@ -94,6 +95,10 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         if (!$json) {
             if ((int) $this->request->post['module_ps_live_search_input_delay'] < 100) {
                 $json['error']['input-input-delay'] = $this->language->get('error_input_delay_min');
+            }
+
+            if ((int) $this->request->post['module_ps_live_search_input_min_chars'] < 1) {
+                $json['error']['input-input-min-chars'] = $this->language->get('error_input_min_chars');
             }
 
             if ((int) $this->request->post['module_ps_live_search_product_description_length'] < 0) {
@@ -162,6 +167,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
             $data = [
                 'module_ps_live_search_input_delay' => 100,
+                'module_ps_live_search_input_min_chars' => 1,
                 'module_ps_live_search_product_status' => 1,
                 'module_ps_live_search_product_description' => 1,
                 'module_ps_live_search_product_description_length' => 100,

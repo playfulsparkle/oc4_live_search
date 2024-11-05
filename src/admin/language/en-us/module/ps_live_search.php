@@ -44,6 +44,7 @@ $_['entry_product_image']                  = 'Show Product Image';
 $_['entry_product_image_size']             = 'Product Image Size (W x H)';
 $_['entry_width']                          = 'Width';
 $_['entry_height']                         = 'Height';
+$_['entry_input_min_chars']                = 'Min. input';
 
 // Button
 $_['button_fix_event_handler']             = 'Fix Event Handler';
@@ -51,6 +52,7 @@ $_['button_fix_event_handler']             = 'Fix Event Handler';
 // Help
 $_['help_input_delay']                     = 'This setting specifies the delay time (in milliseconds) between when the user types a key and when the data is sent to the server. Increasing this delay can help reduce the number of requests sent during rapid input, improving performance and server response times.';
 $_['help_product_description_length']      = 'Specify the maximum number of characters for the product description. This setting determines how many characters will be displayed in the live search results.';
+$_['help_input_min_chars']                 = 'Specify the minimum number of characters required before a search query is sent to the server.';
 
 // Error
 $_['error_permission']                     = 'Warning: You do not have permission to modify Live Search module!';
@@ -70,3 +72,4 @@ $_['error_manufacturer_image_width_min']   = 'The width of the manufacturer imag
 $_['error_manufacturer_image_width_max']   = 'The width of the manufacturer image must be no more than 128 pixels.';
 $_['error_manufacturer_image_height_min']  = 'The height of the manufacturer image must be at least 16 pixels.';
 $_['error_manufacturer_image_height_max']  = 'The height of the manufacturer image must be no more than 128 pixels.';
+$_['error_input_min_chars']                = 'The input minimum length cannot be lower than 1 character.';

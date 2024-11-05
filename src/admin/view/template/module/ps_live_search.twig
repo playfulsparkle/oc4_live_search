@@ -52,6 +52,15 @@
 								</div>
 							</div>
 
+							<div class="row mb-3 required">
+								<label class="col-sm-2 col-form-label" for="input-input-min-chars">{{ entry_input_min_chars }}</label>
+								<div class="col-sm-10">
+									<input type="text" name="module_ps_live_search_input_min_chars" value="{{ module_ps_live_search_input_min_chars | default('1') }}" placeholder="{{ entry_input_min_chars }}" id="input-input-min-chars" class="form-control" />
+									<div id="error-input-input-min-chars" class="invalid-feedback"></div>
+									<div class="form-text">{{ help_input_min_chars }}</div>
+								</div>
+							</div>
+
 						</div>
 						<div id="tab-products" class="tab-pane">
 

@@ -94,6 +94,7 @@
       });
 
       $(element).on("input", function (e) {
+        if ($(element).val().length < this.options.input_min_chars) return;
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(function () { element.request(); }, this.options.input_delay);
       });

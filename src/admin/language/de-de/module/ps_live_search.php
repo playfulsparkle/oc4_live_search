@@ -44,6 +44,7 @@ $_['entry_product_image']                  = 'Produktbild anzeigen';
 $_['entry_product_image_size']             = 'Produktbildgröße (B x H)';
 $_['entry_width']                          = 'Breite';
 $_['entry_height']                         = 'Höhe';
+$_['entry_input_min_chars']                = 'Min. Eingabe';
 
 // Button
 $_['button_fix_event_handler']             = 'Ereignishandler beheben';
@@ -51,6 +52,7 @@ $_['button_fix_event_handler']             = 'Ereignishandler beheben';
 // Help
 $_['help_input_delay']                     = 'Diese Einstellung legt die Verzögerungszeit (in Millisekunden) fest, die zwischen der Eingabe eines Zeichens durch den Benutzer und der Übermittlung der Daten an den Server liegt. Eine Erhöhung dieser Verzögerung kann helfen, die Anzahl der Anfragen während der schnellen Eingabe zu reduzieren und die Leistung sowie die Serverreaktionszeit zu verbessern.';
 $_['help_product_description_length']      = 'Geben Sie die maximale Anzahl an Zeichen für die Produktbeschreibung an. Diese Einstellung bestimmt, wie viele Zeichen in den Live-Suchergebnissen angezeigt werden.';
+$_['help_input_min_chars']                 = 'Geben Sie die minimale Anzahl von Zeichen an, die erforderlich ist, bevor eine Suchanfrage an den Server gesendet wird.';
 
 // Error
 $_['error_permission']                     = 'Warnung: Sie haben keine Berechtigung, das Live Search-Modul zu ändern!';
@@ -70,3 +72,4 @@ $_['error_manufacturer_image_width_min']   = 'Die Breite des Herstellerbildes mu
 $_['error_manufacturer_image_width_max']   = 'Die Breite des Herstellerbildes darf nicht mehr als 128 Pixel betragen.';
 $_['error_manufacturer_image_height_min']  = 'Die Höhe des Herstellerbildes muss mindestens 16 Pixel betragen.';
 $_['error_manufacturer_image_height_max']  = 'Die Höhe des Herstellerbildes darf nicht mehr als 128 Pixel betragen.';
+$_['error_input_min_chars']                = 'Die minimale Eingabelänge darf nicht kleiner als 1 Zeichen sein.';

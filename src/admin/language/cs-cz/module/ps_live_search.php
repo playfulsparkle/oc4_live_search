@@ -44,6 +44,7 @@ $_['entry_product_image']                  = 'Zobrazit obrázek produktu';
 $_['entry_product_image_size']             = 'Velikost obrázku produktu (Š x V)';
 $_['entry_width']                          = 'Šířka';
 $_['entry_height']                         = 'Výška';
+$_['entry_input_min_chars']                = 'Min. počet znaků';
 
 // Button
 $_['button_fix_event_handler']             = 'Opravit zpracovatele událostí';
@@ -51,6 +52,7 @@ $_['button_fix_event_handler']             = 'Opravit zpracovatele událostí';
 // Help
 $_['help_input_delay']                     = 'Toto nastavení určuje časové zpoždění (v milisekundách) mezi stiskem klávesy uživatelem a odesláním dat na server. Zvýšení tohoto zpoždění může pomoci snížit počet požadavků při rychlém zadávání, což zlepší výkon a dobu odezvy serveru.';
 $_['help_product_description_length']      = 'Zadejte maximální počet znaků pro popis produktu. Toto nastavení určuje, kolik znaků bude zobrazeno ve výsledcích vyhledávání.';
+$_['help_input_min_chars']                 = 'Určete minimální počet znaků, které jsou vyžadovány před odesláním vyhledávacího dotazu na server.';
 
 // Error
 $_['error_permission']                     = 'Upozornění: Nemáte oprávnění k úpravě modulu Live Search!';
@@ -70,3 +72,4 @@ $_['error_manufacturer_image_width_min']   = 'Šířka obrázku výrobce musí b
 $_['error_manufacturer_image_width_max']   = 'Šířka obrázku výrobce nesmí být větší než 128 pixelů.';
 $_['error_manufacturer_image_height_min']  = 'Výška obrázku výrobce musí být alespoň 16 pixelů.';
 $_['error_manufacturer_image_height_max']  = 'Výška obrázku výrobce nesmí být větší než 128 pixelů.';
+$_['error_input_min_chars']                = 'Minimální délka vstupu nemůže být nižší než 1 znak.';

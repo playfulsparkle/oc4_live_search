@@ -62,6 +62,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
         $args['language'] = $this->config->get('config_language');
         $args['input_delay'] = $this->config->get('module_ps_live_search_input_delay');
+        $args['input_min_chars'] = $this->config->get('module_ps_live_search_input_min_chars');
 
         $headerViews = $this->model_extension_ps_live_search_module_ps_live_search->replaceSearchViews($args);
 

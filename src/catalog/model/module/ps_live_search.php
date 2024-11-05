@@ -55,7 +55,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                         'text_no_results': '{{ text_no_results }}',
                     },
                     'options': {
-                        'input_delay': {{ input_delay }}
+                        'input_delay': {{ input_delay | default(100) }},
+                        'input_min_chars': {{ input_min_chars | default(1) }}
                     }
                 });
             </script>
