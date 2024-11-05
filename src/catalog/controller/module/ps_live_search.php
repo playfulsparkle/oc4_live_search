@@ -127,7 +127,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 }
 
                 if ($this->config->get('module_ps_live_search_product_description') && $this->config->get('module_ps_live_search_product_description_length') > 0) {
-                    $description = oc_substr(trim(strip_tags(html_entity_decode($productResult['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('module_ps_live_search_product_description_length')) . '..';
+                    $description = $this->_substr(trim(strip_tags(html_entity_decode($productResult['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('module_ps_live_search_product_description_length')) . '..';
                 } else {
                     $description = '';
                 }
@@ -403,5 +403,34 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         }
 
         return $output;
+    }
+
+    /**
+     * Get the substring of a string while ensuring compatibility across OpenCart versions.
+     *
+     * This method returns a substring of the provided string. It utilizes different
+     * substring functions based on the OpenCart version being used to ensure
+     * accurate handling of UTF-8 characters.
+     *
+     * - For OpenCart versions before 4.0.1.0, it uses `utf8_substr()`.
+     * - For OpenCart versions from 4.0.1.0 up to (but not including) 4.0.2.0,
+     *   it uses `\Opencart\System\Helper\Utf8\substr()`.
+     * - For OpenCart version 4.0.2.0 and above, it uses `oc_substr()`.
+     *
+     * @param string $string The input string from which the substring is to be calculated.
+     * @param int $offset The starting position of the substring.
+     * @param int|null $length The length of the substring; if null, returns the rest of the string.
+     *
+     * @return string The substring of the input string.
+     */
+    private function _substr(string $string, int $offset, ?int $length = null): string
+    {
+        if (version_compare(VERSION, '4.0.1.0', '<')) { // OpenCart versions before 4.0.1.0
+            return utf8_substr($string, $offset, $length);
+        } elseif (version_compare(VERSION, '4.0.2.0', '<')) { // OpenCart version 4.0.1.0 up to, but not including, 4.0.2.0
+            return \Opencart\System\Helper\Utf8\substr($string, $offset, $length);
+        }
+
+        return oc_substr($string, $offset, $length); // OpenCart version 4.0.2.0 and above
     }
 }

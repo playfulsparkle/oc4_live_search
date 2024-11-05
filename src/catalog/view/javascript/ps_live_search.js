@@ -5,7 +5,7 @@
       var $dropdown = $("#" + $(element).attr("data-live-search-target"));
       var debounceTimer;
       var currentIndex = -1;
-      var items = {};
+      var items;
       var canRunFocus = true;
 
       $.extend(this, option);
@@ -30,7 +30,9 @@
       });
 
       $(document).delegate('.ps-live-search-item', 'keydown', function (e) {
-        items.attr('tabindex', '-1');
+        if (items && items.length) {
+          items.attr('tabindex', '-1');
+        }
 
         switch (e.key) {
             case 'ArrowDown':
@@ -64,7 +66,9 @@
       });
 
       $(element).on("keydown", function (e) {
-        items.attr('tabindex', '-1');
+        if (items && items.length) {
+          items.attr('tabindex', '-1');
+        }
 
         switch (e.key) {
             case 'ArrowDown':

@@ -89,13 +89,13 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
 
         $query[] = "pd.`name` LIKE '" . $this->db->escape($search . '%') . "'";
         $query[] = "pd.`tag` LIKE '" . $this->db->escape('%' . $search . '%') . "'";
-        $query[] = "LCASE(`p`.`model`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`sku`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`upc`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`ean`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`jan`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`isbn`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
-        $query[] = "LCASE(`p`.`mpn`) = '" . $this->db->escape(oc_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`model`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`sku`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`upc`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`ean`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`jan`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`isbn`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
+        $query[] = "LCASE(`p`.`mpn`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
 
         $sql .= " AND (" . implode(" OR ", $query) . ")";
 
@@ -184,5 +184,31 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
         $query = $this->db->query($sql);
 
         return $query->rows;
+    }
+
+    /**
+     * Convert a string to lowercase while ensuring compatibility across OpenCart versions.
+     *
+     * This method converts the provided string to lowercase using the appropriate function
+     * based on the OpenCart version to ensure accurate handling of UTF-8 characters.
+     *
+     * - For OpenCart versions before 4.0.1.0, it uses `utf8_strtolower()`.
+     * - For OpenCart versions from 4.0.1.0 up to (but not including) 4.0.2.0,
+     *   it uses `\Opencart\System\Helper\Utf8\strtolower()`.
+     * - For OpenCart version 4.0.2.0 and above, it uses `oc_strtolower()`.
+     *
+     * @param string $string The input string that is to be converted to lowercase.
+     *
+     * @return string The lowercase version of the input string.
+     */
+    private function _strtolower(string $string): string
+    {
+        if (version_compare(VERSION, '4.0.1.0', '<')) { // OpenCart versions before 4.0.1.0
+            return utf8_strtolower($string);
+        } elseif (version_compare(VERSION, '4.0.2.0', '<')) { // OpenCart version 4.0.1.0 up to, but not including, 4.0.2.0
+            return \Opencart\System\Helper\Utf8\strtolower($string);
+        }
+
+        return oc_strtolower($string); // OpenCart version 4.0.2.0 and above
     }
 }
