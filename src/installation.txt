@@ -1,4 +1,4 @@
-Playful Sparkle - Live Search (pro)
+Playful Sparkle - Live Search
 
 Playful Sparkle - Live Search is an advanced search extension for OpenCart 4.x+ that displays search results in a dynamic dropdown as users type. It enhances the search experience by providing immediate feedback with relevant results across various types, including products, categories, manufacturers, and information pages. Perfect for OpenCart stores looking to provide a quick and convenient search solution.
 
