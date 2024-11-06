@@ -1,0 +1,45 @@
+Playful Sparkle - Live Search
+
+Playful Sparkle - Live Search is an advanced search extension for OpenCart 4.x+ that displays search results in a dynamic dropdown as users type. It enhances the search experience by providing immediate feedback with relevant results across various types, including products, categories, manufacturers, and information pages. Perfect for OpenCart stores looking to provide a quick and convenient search solution.
+
+Features
+
+- Instant Dropdown Search: As users type, results display in a dropdown, offering a fast and engaging search experience.
+- Comprehensive Search Options:
+  - Product Search: Displays product name, description, sale price, regular price, pre-tax price, and thumbnail.
+  - Category Search: Shows category names in a hierarchy (separated by ">") and thumbnail.
+  - Manufacturer Search: Includes manufacturer name and thumbnail.
+  - Information Pages: Displays the name of the information pages.
+- Customizable Thumbnails: Thumbnail dimensions (width and height) are adjustable to match store design.
+- Adjustable Search Delay: Define a delay between user keystrokes and data requests to optimize server load and user experience.
+- Configurable Product Description Length: Control the length of product descriptions displayed in search results for clarity.
+
+For more information, visit the extension GitHub page at https://github.com/playfulsparkle/oc4_live_search.git.
+
+Demo frontend - https://opencart4.playfulsparkle.com/
+Demo backend - https://opencart4.playfulsparkle.com/admin/
+
+Installation Guide
+
+1. Download the Extension
+   - Download the latest Playful Sparkle - Live Search release from this repository.
+
+2. Upload the Extension Files
+   - Log in to your OpenCart admin panel.
+   - Go to Extensions > Installer.
+   - Click the Upload button and upload the ps_live_search.ocmod.zip file.
+
+3. Install the Extension
+   - Once uploaded, find the Playful Sparkle - Live Search extension and click the Install button.
+   - Navigate to Extensions and select Analytics from the dropdown.
+   - Locate the Playful Sparkle - Live Search in the module list and click the green Install button.
+
+4. Configure the Extension
+   - After installation, go to the Extensions page, ensuring Analytics is selected.
+   - Click Edit next to the Playful Sparkle - Live Search extension.
+   - Install and enable the module by setting the status to Enabled.
+   - Save the configuration.
+
+Support & Feedback
+
+For support or any inquiries regarding the extension, feel free to open an issue on this repository or reach out via email at support@playfulsparkle.com.
