@@ -13,7 +13,18 @@
 - **Customizable Thumbnails**: Thumbnail dimensions (width and height) are adjustable to match store design.
 - **Adjustable Search Delay**: Define a delay between user keystrokes and data requests to optimize server load and user experience.
 - **Configurable Product Description Length**: Control the length of product descriptions displayed in search results for clarity.
-
+- **Multilingual Support**: The extension is available in the following languages:
+  - Čeština (cs-cz)
+  - Deutsch (de-de)
+  - English (GB) (en-gb)
+  - English (US) (en-us)
+  - Español (es-es)
+  - Français (fr-fr)
+  - Magyar (hu-hu)
+  - Italiano (it-it)
+  - Русский (ru-ru)
+  - Slovenčina (sk-sk)
+  
 ## Installation Instructions
 
 ### 1. Download the Extension
