@@ -119,7 +119,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 }
 
                 $json['products']['data'][] = [
-                    'href' => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $productResult['product_id']),
+                    'href' => str_replace('&amp;', '&', $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $productResult['product_id'])),
                     'name' => strip_tags($productResult['name']),
                     'description' => $description,
                     'price' => $price,
@@ -133,7 +133,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($json));
+        $this->response->setOutput(json_encode($json, JSON_UNESCAPED_SLASHES));
     }
 
     /**
