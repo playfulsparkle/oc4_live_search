@@ -134,7 +134,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 }
 
                 $json['products']['data'][] = [
-                    'href' => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $productResult['product_id']),
+                    'href' => str_replace('&amp;', '&', $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $productResult['product_id'])),
                     'name' => strip_tags($productResult['name']),
                     'description' => $description,
                     'price' => $price,
@@ -166,7 +166,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 $paths = array_filter([$categoryResult['paths'], $categoryResult['category_id']]);
 
                 $json['categories']['data'][] = [
-                    'href' => $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=' . implode('_', $paths)),
+                    'href' => str_replace('&amp;', '&', $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=' . implode('_', $paths))),
                     'name' => implode(' > ', array_filter($name)),
                     'thumb' => $thumb,
                     'thumb_width' => $this->config->get('module_ps_live_search_category_image_width'),
@@ -187,7 +187,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 }
 
                 $json['manufacturers']['data'][] = [
-                    'href' => $this->url->link('product/manufacturer.info', 'language=' . $this->config->get('config_language') . '&manufacturer_id=' . $manufacturerResult['manufacturer_id']),
+                    'href' => str_replace('&amp;', '&', $this->url->link('product/manufacturer.info', 'language=' . $this->config->get('config_language') . '&manufacturer_id=' . $manufacturerResult['manufacturer_id'])),
                     'name' => $manufacturerResult['name'],
                     'thumb' => $thumb,
                     'thumb_width' => $this->config->get('module_ps_live_search_manufacturer_image_width'),
@@ -201,14 +201,14 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
             foreach ($informationResults as $informationResult) {
                 $json['informations']['data'][] = [
-                    'href' => $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $informationResult['information_id']),
+                    'href' => str_replace('&amp;', '&', $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $informationResult['information_id'])),
                     'name' => $informationResult['title']
                 ];
             }
         }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode($json));
+        $this->response->setOutput(json_encode($json, JSON_UNESCAPED_SLASHES));
     }
 
     /**
