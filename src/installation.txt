@@ -1,56 +1,63 @@
 Playful Sparkle - Live Search
 
-Playful Sparkle - Live Search is an advanced search extension for OpenCart 4.x+ that displays search results in a dynamic dropdown as users type. It enhances the search experience by providing immediate feedback with relevant results across various types, including products, categories, manufacturers, and information pages. Perfect for OpenCart stores looking to provide a quick and convenient search solution.
+The Playful Sparkle - Live Search extension for OpenCart 4.x+ revolutionizes the
+search functionality by offering real-time, autocomplete suggestions as users
+type, making it easier to find relevant products. With the flexibility to
+customize the search results, store owners can enable or disable different types
+of suggestions, control the length of product descriptions, and adjust the
+visibility and size of product images. The extension also supports
+multi-language and multi-store setups, ensuring a seamless experience across
+various regions and storefronts. Whether you’re running a single store or
+multiple, this extension adapts to your needs, offering an efficient and
+user-friendly search solution for your eCommerce platform.
 
 Features
 
-- Instant Dropdown Search: As users type, results display in a dropdown, offering a fast and engaging search experience.
-- Comprehensive Search Options:
-  - Product Search: Displays product name, description, sale price, regular price, pre-tax price, and thumbnail.
-  - Category Search: Shows category names in a hierarchy (separated by ">") and thumbnail.
-  - Manufacturer Search: Includes manufacturer name and thumbnail.
-  - Information Pages: Displays the name of the information pages.
-- Customizable Thumbnails: Thumbnail dimensions (width and height) are adjustable to match store design.
-- Adjustable Search Delay: Define a delay between user keystrokes and data requests to optimize server load and user experience.
-- Configurable Product Description Length: Control the length of product descriptions displayed in search results for clarity.
-- Multilingual Support: The extension is available in the following languages:
-  - Čeština (cs-cz)
-  - Deutsch (de-de)
-  - English (GB) (en-gb)
-  - English (US) (en-us)
-  - Español (es-es)
-  - Français (fr-fr)
-  - Magyar (hu-hu)
-  - Italiano (it-it)
-  - Русский (ru-ru)
-  - Slovenčina (sk-sk)
+- Real-time Autocomplete Suggestions: Displays instant, real-time search
+  suggestions as customers type, making it faster and easier for users to
+  find products.
+- Customizable Search Results: Administrators can enable or disable specific
+  suggestion categories like products, offering full control over the
+  search experience.
+- Adjustable Product Descriptions: Customize the length and display of product
+  descriptions in the search results, allowing for a clean and informative
+  layout tailored to your preferences.
+- Image Display Customization: Choose whether to display product images in the
+  search results and control their visibility and size, offering a visually
+  appealing user experience.
+- Enhanced User Experience: With an intuitive search interface and customizable
+  display options, customers can find exactly what they’re looking for quickly
+  and easily, leading to a better shopping experience.
+- Compatibility: Integrates smoothly with OpenCart 4.x+, supporting a range of
+  online store setups.
+- Multi-store Support: Supports multi-store setups by default, making it easy to
+  integrate across multiple OpenCart stores.
+- Multilingual Support: Ready for international use with languages including
+  Čeština (cs-cz), Deutsch (de-de), English (GB) (en-gb), English (US) (en-us),
+  Español (es-es), Français (fr-fr), Magyar (hu-hu), Italiano (it-it),
+  Русский (ru-ru), and Slovenčina (sk-sk).
 
-For more information, visit the extension GitHub page at https://github.com/playfulsparkle/oc4_live_search.git.
+For more information, visit the extension's GitHub page
+at https://github.com/playfulsparkle/oc4_live_search.git.
 
-Demo frontend - https://opencart4.playfulsparkle.com/
-Demo backend - https://opencart4.playfulsparkle.com/admin/
+Demo frontend: https://opencart4.playfulsparkle.com/
+Demo backend: https://opencart4.playfulsparkle.com/admin/
 
-Installation Guide
+Installation Instructions
 
-1. Download the Extension
-   - Download the latest Playful Sparkle - Live Search release from this repository.
+1. Download the latest version from this repository.
+2. Log in to your OpenCart admin panel.
+3. Navigate to Extensions > Installer.
+4. Click the Upload button and upload the ps_live_search.ocmod.zip file.
+5. Locate the extension in the Installed Extensions list and click the
+   Install button.
+6. Navigate to Extensions > Extensions and select Modules from the Choose the
+   extension type dropdown list.
+7. Locate the extension in the Modules list and click the Install button.
+8. Click the Edit button, configure the extension parameters, and click the Save
+   button to save your settings.
 
-2. Upload the Extension Files
-   - Log in to your OpenCart admin panel.
-   - Go to Extensions > Installer.
-   - Click the Upload button and upload the ps_live_search.ocmod.zip file.
+Support & Inquiries
 
-3. Install the Extension
-   - Once uploaded, find the Playful Sparkle - Live Search extension and click the Install button.
-   - Navigate to Extensions and select Analytics from the dropdown.
-   - Locate the Playful Sparkle - Live Search in the module list and click the green Install button.
-
-4. Configure the Extension
-   - After installation, go to the Extensions page, ensuring Analytics is selected.
-   - Click Edit next to the Playful Sparkle - Live Search extension.
-   - Install and enable the module by setting the status to Enabled.
-   - Save the configuration.
-
-Support & Feedback
-
-For support or any inquiries regarding the extension, feel free to open an issue on this repository or reach out via email at support@playfulsparkle.com.
+For assistance or inquiries related to this extension, please open an issue in
+the extension repository or contact us via email at support@playfulsparkle.com
