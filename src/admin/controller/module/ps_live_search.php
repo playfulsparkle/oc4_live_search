@@ -50,16 +50,16 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         $data['fix_event_handler'] = $this->url->link('extension/ps_live_search/module/ps_live_search' . $separator . 'fixEventHandler', 'user_token=' . $this->session->data['user_token']);
         $data['back'] = $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module');
 
-        $data['module_ps_live_search_status'] = $this->config->get('module_ps_live_search_status');
-        $data['module_ps_live_search_input_delay'] = $this->config->get('module_ps_live_search_input_delay');
-        $data['module_ps_live_search_input_min_chars'] = $this->config->get('module_ps_live_search_input_min_chars');
+        $data['module_ps_live_search_status'] = (bool) $this->config->get('module_ps_live_search_status');
+        $data['module_ps_live_search_input_delay'] = (int) $this->config->get('module_ps_live_search_input_delay');
+        $data['module_ps_live_search_input_min_chars'] = (int) $this->config->get('module_ps_live_search_input_min_chars');
 
-        $data['module_ps_live_search_product_status'] = $this->config->get('module_ps_live_search_product_status');
-        $data['module_ps_live_search_product_description'] = $this->config->get('module_ps_live_search_product_description');
-        $data['module_ps_live_search_product_description_length'] = $this->config->get('module_ps_live_search_product_description_length');
-        $data['module_ps_live_search_product_image'] = $this->config->get('module_ps_live_search_product_image');
-        $data['module_ps_live_search_product_image_width'] = $this->config->get('module_ps_live_search_product_image_width');
-        $data['module_ps_live_search_product_image_height'] = $this->config->get('module_ps_live_search_product_image_height');
+        $data['module_ps_live_search_product_status'] = (bool) $this->config->get('module_ps_live_search_product_status');
+        $data['module_ps_live_search_product_description'] = (bool) $this->config->get('module_ps_live_search_product_description');
+        $data['module_ps_live_search_product_description_length'] = (int) $this->config->get('module_ps_live_search_product_description_length');
+        $data['module_ps_live_search_product_image'] = (bool) $this->config->get('module_ps_live_search_product_image');
+        $data['module_ps_live_search_product_image_width'] = (int) $this->config->get('module_ps_live_search_product_image_width');
+        $data['module_ps_live_search_product_image_height'] = (int) $this->config->get('module_ps_live_search_product_image_height');
 
         $data['text_contact'] = sprintf($this->language->get('text_contact'), self::EXTENSION_EMAIL, self::EXTENSION_EMAIL, self::EXTENSION_DOC);
 
