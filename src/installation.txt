@@ -45,7 +45,7 @@ Demo backend: https://opencart4.playfulsparkle.com/admin/
 
 Installation Instructions
 
-1. Download the latest version from this repository.
+1. Download the latest version from the OpenCart Marketplace.
 2. Log in to your OpenCart admin panel.
 3. Navigate to Extensions > Installer.
 4. Click the Upload button and upload the ps_live_search.ocmod.zip file.
