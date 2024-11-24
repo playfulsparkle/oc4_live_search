@@ -6,7 +6,7 @@ $_['heading_getting_started']              = 'Kezdő lépések';
 $_['heading_setup']                        = 'Live Search beállítása';
 $_['heading_troubleshot']                  = 'Gyakori hibakeresési lépések';
 $_['heading_faq']                          = 'GYIK';
-$_['heading_contact']                      = 'Kapcsolatfelvétel a támogatással';
+$_['heading_contact']                      = 'Terméktámogatás';
 
 // Text
 $_['text_extension']                       = 'Bővítmények';
