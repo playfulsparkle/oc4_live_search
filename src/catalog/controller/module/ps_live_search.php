@@ -81,7 +81,16 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
     public function autocomplete()
     {
+        $separator = version_compare(VERSION, '4.0.2.0', '>=') ? '.' : '|';
+
+        if (isset($this->request->get['search'])) {
+            $search = $this->request->get['search'];
+        } else {
+            $search = '';
+        }
+
         $json = [
+            'query' => html_entity_decode($search, ENT_QUOTES, 'UTF-8'),
             'products' => [
                 'status' => (bool) $this->config->get('module_ps_live_search_product_status'),
                 'data' => []
@@ -99,12 +108,6 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 'data' => []
             ],
         ];
-
-        if (isset($this->request->get['search'])) {
-            $search = $this->request->get['search'];
-        } else {
-            $search = '';
-        }
 
         $this->load->model('extension/ps_live_search/module/ps_live_search');
         $this->load->model('tool/image');
@@ -197,7 +200,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 }
 
                 $json['manufacturers']['data'][] = [
-                    'href' => str_replace('&amp;', '&', $this->url->link('product/manufacturer.info', 'language=' . $this->config->get('config_language') . '&manufacturer_id=' . $manufacturerResult['manufacturer_id'])),
+                    'href' => str_replace('&amp;', '&', $this->url->link('product/manufacturer' . $separator . 'info', 'language=' . $this->config->get('config_language') . '&manufacturer_id=' . $manufacturerResult['manufacturer_id'])),
                     'name' => $manufacturerResult['name'],
                     'thumb' => $thumb,
                     'thumb_width' => $this->config->get('module_ps_live_search_manufacturer_image_width'),
