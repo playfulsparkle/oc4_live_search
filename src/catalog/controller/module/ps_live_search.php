@@ -22,17 +22,25 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
             return;
         }
 
-        $ps_live_search_script = 'extension/ps_live_search/catalog/view/javascript/ps_live_search.js';
+        if (isset($args['scripts'])) {
+            $ps_live_search_script = 'extension/ps_live_search/catalog/view/javascript/ps_live_search.js';
 
-        $args['scripts'][$ps_live_search_script] = ['href' => $ps_live_search_script];
+            if (version_compare(VERSION, '4.0.1.0', '>=')) {
+                $args['scripts'][$ps_live_search_script] = ['href' => $ps_live_search_script];
+            } else {
+                $args['scripts'][$ps_live_search_script] = $ps_live_search_script;
+            }
+        }
 
-        $ps_live_search_style = 'extension/ps_live_search/catalog/view/stylesheet/ps_live_search.css';
+        if (isset($args['styles'])) {
+            $ps_live_search_style = 'extension/ps_live_search/catalog/view/stylesheet/ps_live_search.css';
 
-        $args['styles'][$ps_live_search_style] = [
-            'href' => $ps_live_search_style,
-            'rel' => 'stylesheet',
-            'media' => 'screen'
-        ];
+            $args['styles'][$ps_live_search_style] = [
+                'href' => $ps_live_search_style,
+                'rel' => 'stylesheet',
+                'media' => 'screen'
+            ];
+        }
     }
 
     /**
