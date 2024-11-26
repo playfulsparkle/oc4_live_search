@@ -257,11 +257,13 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         } else {
             $result = $this->model_setting_event->addEvent(
                 'module_ps_live_search',
+                '',
                 'catalog/view/common/header/before',
                 'extension/ps_live_search/module/ps_live_search' . $separator . 'eventCatalogViewCommonHeaderBefore'
             );
             $result = $this->model_setting_event->addEvent(
                 'module_ps_live_search',
+                '',
                 'catalog/view/common/search/before',
                 'extension/ps_live_search/module/ps_live_search' . $separator . 'eventCatalogViewCommonSearchBefore'
             );
