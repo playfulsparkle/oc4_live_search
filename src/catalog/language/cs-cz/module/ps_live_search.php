@@ -6,6 +6,6 @@ $_['heading_manufacturers'] = 'Výrobci';
 $_['heading_informations']  = 'Informace';
 
 // Text
-$_['text_showing_results']  = 'Zobrazuji výsledky pro <strong>%search%</strong>';
+$_['text_showing_results']  = 'Zobrazuji výsledky pro <strong id="ps-live-search-query"></strong>';
 $_['text_all_results']      = 'Všechny výsledky';
 $_['text_no_results']       = 'Žádné výsledky';

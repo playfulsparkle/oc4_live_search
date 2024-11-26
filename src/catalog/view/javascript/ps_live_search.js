@@ -131,10 +131,9 @@
 
       this.response = function (json) {
         var html = "";
-        var query = $(element).val();
-        var url_more = $('base').attr('href') + 'index.php?route=product/search&language=' + $dropdown.attr('data-lang') + '&search=' + encodeURIComponent(query);
+        var url_more = $('base').attr('href') + 'index.php?route=product/search&language=' + $dropdown.attr('data-lang') + '&search=' + encodeURIComponent(json.query);
 
-        html += '<li><span class="ps-live-search-subheader">' + this.translations.text_showing_results.replace('%search%', query) + '</span></li>';
+        html += '<li><span class="ps-live-search-subheader">' + this.translations.text_showing_results + '</span></li>';
 
         if (json.products.status) {
           html += '<li><h3 class="ps-live-search-header">' + this.translations.heading_products + '</h3></li>';
@@ -170,6 +169,8 @@
         }
 
         $dropdown.html(html);
+
+        $('#ps-live-search-query').text(json.query);
 
         items = $dropdown.find(".ps-live-search-item");
       };

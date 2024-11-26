@@ -6,6 +6,6 @@ $_['heading_manufacturers'] = 'Hersteller';
 $_['heading_informations']  = 'Informationen';
 
 // Text
-$_['text_showing_results']  = 'Ergebnisse für <strong>%search%</strong> anzeigen';
+$_['text_showing_results']  = 'Ergebnisse für <strong id="ps-live-search-query"></strong> anzeigen';
 $_['text_all_results']      = 'Alle Ergebnisse';
 $_['text_no_results']       = 'Keine Ergebnisse';

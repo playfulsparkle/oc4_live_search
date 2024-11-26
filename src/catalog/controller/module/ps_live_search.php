@@ -78,18 +78,19 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
     public function autocomplete()
     {
-        $json = [
-            'products' => [
-                'status' => (bool) $this->config->get('module_ps_live_search_product_status'),
-                'data' => []
-            ]
-        ];
-
         if (isset($this->request->get['search'])) {
             $search = $this->request->get['search'];
         } else {
             $search = '';
         }
+
+        $json = [
+            'query' => html_entity_decode($search, ENT_QUOTES, 'UTF-8'),
+            'products' => [
+                'status' => (bool) $this->config->get('module_ps_live_search_product_status'),
+                'data' => []
+            ]
+        ];
 
         $this->load->model('extension/ps_live_search/module/ps_live_search');
         $this->load->model('tool/image');
