@@ -162,7 +162,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
     public function install(): void
     {
-        if ($this->user->hasPermission('modify', 'extension/ps_live_search/module/ps_live_search')) {
+        if ($this->user->hasPermission('modify', 'extension/module')) {
             $this->load->model('setting/setting');
 
             $data = [
@@ -195,7 +195,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
     public function uninstall(): void
     {
-        if ($this->user->hasPermission('modify', 'extension/ps_live_search/module/ps_live_search')) {
+        if ($this->user->hasPermission('modify', 'extension/module')) {
             $this->load->model('setting/event');
 
             $this->_unregisterEvents();
