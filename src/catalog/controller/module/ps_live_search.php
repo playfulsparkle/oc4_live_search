@@ -62,6 +62,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
         $this->load->model('extension/ps_live_search/module/ps_live_search');
 
+        $args['oc4_separator'] = version_compare(VERSION, '4.0.2.0', '>=') ? '.' : '|';
+
         $args['heading_products'] = $this->language->get('heading_products');
         $args['heading_categories'] = $this->language->get('heading_categories');
         $args['heading_manufacturers'] = $this->language->get('heading_manufacturers');
