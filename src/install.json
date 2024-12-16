@@ -1,5 +1,6 @@
 {
     "name": "Playful Sparkle - Live Search",
+    "description": "Enhance your store's search with real-time autocomplete, customizable results, and multi-language support for a seamless user experience.",
     "code": "ps_live_search",
     "license": "GPL",
     "version": "1.0.0",
