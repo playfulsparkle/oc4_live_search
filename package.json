@@ -13,7 +13,7 @@
     "live search"
   ],
   "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
-  "license": "GPL",
+  "license": "Proprietary",
   "dependencies": {
     "archiver": "^7.0.1",
     "csso": "^5.0.5",
