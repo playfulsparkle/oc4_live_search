@@ -136,8 +136,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                     $tax = false;
                 }
 
-                if ($this->config->get('module_ps_live_search_product_image') && is_file(DIR_IMAGE . html_entity_decode($productResult['image'], ENT_QUOTES, 'UTF-8'))) {
-                    $thumb = $this->model_tool_image->resize(html_entity_decode($productResult['image'], ENT_QUOTES, 'UTF-8'), $this->config->get('module_ps_live_search_product_image_width'), $this->config->get('module_ps_live_search_product_image_height'));
+                if ($this->config->get('module_ps_live_search_product_image') && !empty($productResult['image'])) {
+                    $thumb = $this->model_tool_image->resize($productResult['image'], $this->config->get('module_ps_live_search_product_image_width'), $this->config->get('module_ps_live_search_product_image_height'));
                 } else {
                     $thumb = '';
                 }
@@ -166,8 +166,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
             $categoryResults = $this->model_extension_ps_live_search_module_ps_live_search->getCategories($search);
 
             foreach ($categoryResults as $categoryResult) {
-                if ($this->config->get('module_ps_live_search_category_image') && is_file(DIR_IMAGE . html_entity_decode($categoryResult['image'], ENT_QUOTES, 'UTF-8'))) {
-                    $thumb = $this->model_tool_image->resize(html_entity_decode($categoryResult['image'], ENT_QUOTES, 'UTF-8'), $this->config->get('module_ps_live_search_category_image_width'), $this->config->get('module_ps_live_search_category_image_height'));
+                if ($this->config->get('module_ps_live_search_category_image') && !empty($categoryResult['image'])) {
+                    $thumb = $this->model_tool_image->resize($categoryResult['image'], $this->config->get('module_ps_live_search_category_image_width'), $this->config->get('module_ps_live_search_category_image_height'));
                 } else {
                     $thumb = '';
                 }
@@ -195,8 +195,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
             foreach ($manufacturerResults as $manufacturerResult) {
 
-                if ($this->config->get('module_ps_live_search_manufacturer_image') && is_file(DIR_IMAGE . html_entity_decode($manufacturerResult['image'], ENT_QUOTES, 'UTF-8'))) {
-                    $thumb = $this->model_tool_image->resize(html_entity_decode($manufacturerResult['image'], ENT_QUOTES, 'UTF-8'), $this->config->get('module_ps_live_search_manufacturer_image_width'), $this->config->get('module_ps_live_search_manufacturer_image_height'));
+                if ($this->config->get('module_ps_live_search_manufacturer_image') && !empty($manufacturerResult['image'])) {
+                    $thumb = $this->model_tool_image->resize($manufacturerResult['image'], $this->config->get('module_ps_live_search_manufacturer_image_width'), $this->config->get('module_ps_live_search_manufacturer_image_height'));
                 } else {
                     $thumb = '';
                 }
