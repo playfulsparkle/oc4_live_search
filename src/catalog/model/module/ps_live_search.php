@@ -85,7 +85,20 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
 
         $query = [];
 
-        $query[] = "pd.`name` LIKE '" . $this->db->escape($search . '%') . "'";
+        $words = explode(' ', trim(preg_replace('/\s+/', ' ', $search)));
+
+        $words = array_filter($words);
+
+        foreach ($words as $word) {
+            if (strlen($word) < 2) {
+                continue;
+            }
+
+            $query[] = "`pd`.`name` LIKE '" . $this->db->escape('%' . $word . '%') . "'";
+
+            $query[] = "pd.`tag` LIKE '" . $this->db->escape('%' . $word . '%') . "'";
+        }
+
         $query[] = "pd.`tag` LIKE '" . $this->db->escape('%' . $search . '%') . "'";
         $query[] = "LCASE(`p`.`model`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
         $query[] = "LCASE(`p`.`sku`) = '" . $this->db->escape($this->_strtolower($search)) . "'";
