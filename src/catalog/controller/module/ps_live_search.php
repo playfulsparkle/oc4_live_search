@@ -69,7 +69,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         $args['heading_manufacturers'] = $this->language->get('heading_manufacturers');
         $args['heading_informations'] = $this->language->get('heading_informations');
         $args['text_showing_results'] = $this->language->get('text_showing_results');
-        $args['text_all_results'] = $this->language->get('text_all_results');
+        $args['text_all_product_results'] = $this->language->get('text_all_product_results');
         $args['text_no_results'] = $this->language->get('text_no_results');
 
         $args['language'] = $this->config->get('config_language');

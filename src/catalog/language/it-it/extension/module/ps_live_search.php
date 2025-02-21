@@ -7,5 +7,5 @@ $_['heading_informations']  = 'Informazioni';
 
 // Text
 $_['text_showing_results']  = 'Visualizzazione dei risultati per <strong id="ps-live-search-query"></strong>';
-$_['text_all_results']      = 'Tutti i risultati';
+$_['text_all_product_results']      = 'Mostra tutti i risultati del prodotto';
 $_['text_no_results']       = 'Nessun risultato';

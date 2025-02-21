@@ -51,7 +51,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                         'heading_manufacturers': '{{ heading_manufacturers }}',
                         'heading_informations': '{{ heading_informations }}',
                         'text_showing_results': '{{ text_showing_results }}',
-                        'text_all_results': '{{ text_all_results }}',
+                        'text_all_product_results': '{{ text_all_product_results }}',
                         'text_no_results': '{{ text_no_results }}',
                     },
                     'options': {
