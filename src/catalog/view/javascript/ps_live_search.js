@@ -163,9 +163,9 @@
         }
 
         if (json.products.status && json.products.data.length > 0) {
-          html += '<li><a href="' + url_more + '" class="ps-live-search-more">' + this.translations.text_all_results + ' <i class="fa-solid fa-caret-down"></i></a></li>';
+          html += '<li><a href="' + url_more + '" class="ps-live-search-more">' + this.translations.text_all_product_results + ' <i class="fa-solid fa-caret-down"></i></a></li>';
         } else {
-          html += '<li><span class="ps-live-search-more">' + this.translations.text_all_results + ' <i class="fa-solid fa-caret-down"></i></span></li>';
+          html += '<li><span class="ps-live-search-more">' + this.translations.text_all_product_results + ' <i class="fa-solid fa-caret-down"></i></span></li>';
         }
 
         $dropdown.html(html);

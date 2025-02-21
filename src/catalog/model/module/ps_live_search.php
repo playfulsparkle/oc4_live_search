@@ -48,7 +48,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                     'translations': {
                         'heading_products': '{{ heading_products }}',
                         'text_showing_results': '{{ text_showing_results }}',
-                        'text_all_results': '{{ text_all_results }}',
+                        'text_all_product_results': '{{ text_all_product_results }}',
                         'text_no_results': '{{ text_no_results }}',
                     },
                     'options': {
