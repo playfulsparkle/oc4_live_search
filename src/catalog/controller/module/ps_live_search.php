@@ -73,8 +73,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         $args['text_no_results'] = $this->language->get('text_no_results');
 
         $args['language'] = $this->config->get('config_language');
-        $args['input_delay'] = (int)$this->config->get('module_ps_live_search_input_delay');
-        $args['input_min_chars'] = (int)$this->config->get('module_ps_live_search_input_min_chars');
+        $args['input_delay'] = (int) $this->config->get('module_ps_live_search_input_delay');
+        $args['input_min_chars'] = (int) $this->config->get('module_ps_live_search_input_min_chars');
 
         $headerViews = $this->model_extension_ps_live_search_module_ps_live_search->replaceSearchViews($args);
 
@@ -95,6 +95,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
             'query' => html_entity_decode($search, ENT_QUOTES, 'UTF-8'),
             'products' => [
                 'status' => (bool) $this->config->get('module_ps_live_search_product_status'),
+                'show_price' => (bool) $this->config->get('module_ps_live_search_product_price'),
                 'data' => []
             ],
             'categories' => [
@@ -118,21 +119,27 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
             $productResults = $this->model_extension_ps_live_search_module_ps_live_search->getProducts($search);
 
             foreach ($productResults as $productResult) {
-                if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-                    $price = $this->currency->format($this->tax->calculate($productResult['price'], $productResult['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                if ($this->config->get('module_ps_live_search_product_price')) {
+                    if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+                        $price = $this->currency->format($this->tax->calculate($productResult['price'], $productResult['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                    } else {
+                        $price = false;
+                    }
+
+                    if ((float) $productResult['special']) {
+                        $special = $this->currency->format($this->tax->calculate($productResult['special'], $productResult['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+                    } else {
+                        $special = false;
+                    }
+
+                    if ($this->config->get('config_tax')) {
+                        $tax = $this->currency->format((float) $productResult['special'] ? $productResult['special'] : $productResult['price'], $this->session->data['currency']);
+                    } else {
+                        $tax = false;
+                    }
                 } else {
                     $price = false;
-                }
-
-                if ((float) $productResult['special']) {
-                    $special = $this->currency->format($this->tax->calculate($productResult['special'], $productResult['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-                } else {
                     $special = false;
-                }
-
-                if ($this->config->get('config_tax')) {
-                    $tax = $this->currency->format((float) $productResult['special'] ? $productResult['special'] : $productResult['price'], $this->session->data['currency']);
-                } else {
                     $tax = false;
                 }
 
