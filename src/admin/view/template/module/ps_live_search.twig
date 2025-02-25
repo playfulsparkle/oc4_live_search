@@ -119,6 +119,16 @@
 								</div>
 							</div>
 
+							<div class="row mb-3">
+								<label for="input-product-price" class="col-sm-2 col-form-label">{{ entry_product_price }}</label>
+								<div class="col-sm-10">
+									<div class="form-check form-switch form-switch-lg">
+										<input type="hidden" name="module_ps_live_search_product_price" value="0">
+										<input type="checkbox" name="module_ps_live_search_product_price" value="1" class="form-check-input" {% if module_ps_live_search_product_price %} checked{% endif %} id="input-product-price">
+									</div>
+								</div>
+							</div>
+
 						</div>
 						<div id="tab-categories" class="tab-pane">
 

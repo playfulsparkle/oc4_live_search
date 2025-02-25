@@ -42,6 +42,7 @@ $_['entry_product_description']            = 'Termékleírás megjelenítése';
 $_['entry_product_description_length']     = 'Termékleírás hossza';
 $_['entry_product_image']                  = 'Termék kép megjelenítése';
 $_['entry_product_image_size']             = 'Termék kép mérete (Sz x M)';
+$_['entry_product_price']                  = 'Termékár megjelenítése';
 $_['entry_width']                          = 'Szélesség';
 $_['entry_height']                         = 'Magasság';
 $_['entry_input_min_chars']                = 'Min. karakter';

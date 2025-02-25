@@ -60,6 +60,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
         $data['module_ps_live_search_product_image'] = (bool) $this->config->get('module_ps_live_search_product_image');
         $data['module_ps_live_search_product_image_width'] = (int) $this->config->get('module_ps_live_search_product_image_width');
         $data['module_ps_live_search_product_image_height'] = (int) $this->config->get('module_ps_live_search_product_image_height');
+        $data['module_ps_live_search_product_price'] = (bool) $this->config->get('module_ps_live_search_product_price');
 
         $data['text_contact'] = sprintf($this->language->get('text_contact'), self::EXTENSION_EMAIL, self::EXTENSION_EMAIL, self::EXTENSION_DOC);
 
@@ -137,7 +138,8 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
                 'module_ps_live_search_product_description_length' => 100,
                 'module_ps_live_search_product_image' => 1,
                 'module_ps_live_search_product_image_width' => 64,
-                'module_ps_live_search_product_image_height' => 64
+                'module_ps_live_search_product_image_height' => 64,
+                'module_ps_live_search_product_price' => 1,
             ];
 
             $this->model_setting_setting->editSetting('module_ps_live_search', $data);

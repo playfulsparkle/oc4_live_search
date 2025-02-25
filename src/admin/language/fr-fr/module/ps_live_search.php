@@ -42,6 +42,7 @@ $_['entry_product_description']            = 'Afficher la description du produit
 $_['entry_product_description_length']     = 'Longueur de la description du produit';
 $_['entry_product_image']                  = 'Afficher l\'image du produit';
 $_['entry_product_image_size']             = 'Taille de l\'image du produit (L x H)';
+$_['entry_product_price']                  = 'Afficher le prix du produit';
 $_['entry_width']                          = 'Largeur';
 $_['entry_height']                         = 'Hauteur';
 $_['entry_input_min_chars']                = 'Caractères minimum';

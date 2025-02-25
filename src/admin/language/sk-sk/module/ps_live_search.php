@@ -42,6 +42,7 @@ $_['entry_product_description']            = 'Zobraziť popis produktu';
 $_['entry_product_description_length']     = 'Dĺžka popisu produktu';
 $_['entry_product_image']                  = 'Zobraziť obrázok produktu';
 $_['entry_product_image_size']             = 'Veľkosť obrázku produktu (Š x V)';
+$_['entry_product_price']                  = 'Zobraziť cenu produktu';
 $_['entry_width']                          = 'Šírka';
 $_['entry_height']                         = 'Výška';
 $_['entry_input_min_chars']                = 'Min. počet znakov';
