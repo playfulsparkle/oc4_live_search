@@ -148,16 +148,21 @@
               if (product.description) {
                 html += '<span class="description">' + product.description + '</span>';
               }
+              html += '</span>';
               if (json.products.show_price) {
-                html += '</span><span class="prices">';
+                html += '<span class="prices">';
                 if (!product.special) {
                   html += '<span class="price-new">' + product.price + '</span>';
                 } else {
                   html += '<span class="price-old">' + product.price + '</span>';
                   html += '<span class="price-new">' + product.special + '</span>';
                 }
-                html += '<span class="price-tax">' + product.tax + '</span></span></a></li>';
+                if (product.tax) {
+                  html += '<span class="price-tax">' + product.tax + '</span>';
+                }
+                html += '</span>';
               }
+              html += '</a></li>';
             }
           } else {
             html += '<li><span class="ps-live-search-item-text">' + this.translations.text_no_results + '</span></li>';
