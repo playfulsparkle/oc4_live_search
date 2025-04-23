@@ -38,6 +38,21 @@ Features
   Русский (ru-ru), Ελληνικά (el-GR), العربية (ar), Polski (pl-pl),
   and Slovenčina (sk-sk).
 
+Live Search Scope
+
+This extension allows you to instantly search through the following data from
+your store:
+
+- Product Name
+- Product Tags
+- Model
+- SKU (Stock Keeping Unit)
+- UPC (Universal Product Code)
+- EAN (European Article Number)
+- JAN (Japanese Article Number)
+- ISBN (International Standard Book Number)
+- MPN (Manufacturer Part Number)
+
 For more information, visit the extension's GitHub page
 at https://github.com/playfulsparkle/oc4_live_search.git.
 

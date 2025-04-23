@@ -17,6 +17,22 @@ The **Playful Sparkle - Live Search** extension for OpenCart 4.x+ revolutionizes
 
 ---
 
+## Live Search Scope
+
+This extension allows you to instantly search through the following data from your store:
+
+* Product Name
+* Product Tags
+* Model
+* SKU (Stock Keeping Unit)
+* UPC (Universal Product Code)
+* EAN (European Article Number)
+* JAN (Japanese Article Number)
+* ISBN (International Standard Book Number)
+* MPN (Manufacturer Part Number)
+
+---
+
 ## Installation Instructions
 
 1. Download the latest version from this repository.
