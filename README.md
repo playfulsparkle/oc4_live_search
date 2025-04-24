@@ -2,6 +2,8 @@
 
 The **Playful Sparkle - Live Search** extension for OpenCart 4.x+ revolutionizes the search functionality by offering real-time, autocomplete suggestions as users type, making it easier to find relevant products. With the flexibility to customize the search results, store owners can enable or disable different types of suggestions, control the length of product descriptions, and adjust the visibility and size of product images. The extension also supports multi-language and multi-store setups, ensuring a seamless experience across various regions and storefronts. Whether you’re running a single store or multiple, this extension adapts to your needs, offering an efficient and user-friendly search solution for your eCommerce platform.
 
+![live-search-preview](https://github.com/user-attachments/assets/c4c0cacd-44d8-4ae5-a9e7-ec502ef6064f)
+
 ---
 
 ## Features
