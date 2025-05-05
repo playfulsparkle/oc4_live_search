@@ -26,10 +26,25 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
             'replace' => '<input type="text" name="search" id="ps-live-search-input" data-live-search-target="ps-live-search"'
         ];
 
-        $views[] = [
-            'search' => '</i></button>',
-            'replace' => <<<HTML
-            </i></button>
+        if (version_compare(VERSION, '4.0.0.0', '=')) {
+            $views[] = [
+                'search' => '<i class="fas fa-search"></i></button>',
+                'replace' => $this->searchListTpl('<i class="fas fa-search"></i></button>')
+            ];
+        } else {
+            $views[] = [
+                'search' => '<i class="fa-solid fa-magnifying-glass"></i></button>',
+                'replace' => $this->searchListTpl('<i class="fa-solid fa-magnifying-glass"></i></button>')
+            ];
+        }
+
+        return $views;
+    }
+
+    private function searchListTpl(string $search): string
+    {
+        return <<<HTML
+            {$search}
             <ul id="ps-live-search" class="ps-live-search-list" data-lang="{{ language }}"></ul>
             <script>
                 $('#ps-live-search-input').pslivesearch({
@@ -47,6 +62,9 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                     },
                     'translations': {
                         'heading_products': '{{ heading_products }}',
+                        'heading_categories': '{{ heading_categories }}',
+                        'heading_manufacturers': '{{ heading_manufacturers }}',
+                        'heading_informations': '{{ heading_informations }}',
                         'text_showing_results': '{{ text_showing_results }}',
                         'text_all_product_results': '{{ text_all_product_results }}',
                         'text_no_results': '{{ text_no_results }}',
@@ -57,10 +75,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                     }
                 });
             </script>
-            HTML
-        ];
-
-        return $views;
+            HTML;
     }
 
     /**
