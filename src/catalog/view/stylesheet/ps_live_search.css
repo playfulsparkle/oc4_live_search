@@ -87,7 +87,8 @@
     border-bottom: 1px solid var(--bs-light-border-subtle);
 }
 
-.ps-live-search-list .ps-live-search-subheader > strong {
+.ps-live-search-list .ps-live-search-subheader > output {
+    font-weight: bold;
     color: var(--bs-body-color);
 }
 

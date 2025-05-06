@@ -222,6 +222,17 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
             return file_get_contents($template_file);
         }
 
+        // Support for OC4 extension
+        $firstSlash = strpos($route, '/');
+        $secondSlash = strpos($route, '/', $firstSlash + 1);
+        $template_file = DIR_OPENCART . substr($route, 0, $secondSlash + 1) . 'catalog/view/template/' . substr($route, $secondSlash + 1) . '.twig';
+
+        if (file_exists($template_file) && is_file($template_file)) {
+            $template_file = $this->modCheck($template_file);
+
+            return file_get_contents($template_file);
+        }
+
         return false;
     }
 

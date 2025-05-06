@@ -1,137 +1,154 @@
 +(function ($) {
   $.fn.pslivesearch = function (option) {
+    var defaults = {
+      options: {
+        input_min_chars: 1,
+        input_delay: 100
+      },
+      translations: {
+        'heading_products': 'Products',
+        'text_showing_results': 'Showing results for <output></output>',
+        'text_all_product_results': 'Show all product results',
+        'text_no_results': 'No results'
+      },
+      source: null,
+      select: null
+    };
+
     return this.each(function () {
       var element = this;
-      var $dropdown = $("#" + $(element).attr("data-live-search-target"));
+      var $element = $(element);
+      var config = $.extend(true, {}, defaults, option);
+      $.extend(element, config);
+
+      var $dropdown = $("#" + $element.attr("data-live-search-target"));
       var debounceTimer;
       var currentIndex = -1;
-      var items = [];
+      var $items = [];
       var canRunFocus = true;
 
-      $.extend(this, option);
-
-      $(element).attr({
+      // ARIA attributes setup
+      $element.attr({
+        "autoComplete": "off",
         "aria-autocomplete": "list",
         "aria-expanded": "false",
-        "aria-owns": $(element).attr("data-live-search-target"),
+        "aria-owns": $element.attr("data-live-search-target"),
         role: "combobox"
       });
 
-      $(element).on("focusin", function () {
-        if (canRunFocus) {
-          element.request();
-        }
+      // Event handlers
+      $element.on("focusin.psls", function () {
+        if (canRunFocus) element.request();
       });
 
-      $(element).on("focusout", function (e) {
+      $element.on("focusout.psls", function (e) {
         if (!$dropdown.has(e.relatedTarget).length && e.relatedTarget !== element) {
           element.closeDropdown();
         }
       });
 
-      $(document).on('keydown', '.ps-live-search-item', function (e) {
-        if (items.length) {
-          items.attr('tabindex', '-1');
-        }
+      $dropdown.on('keydown.psls', '.ps-live-search-item', handleDropdownNavigation);
+      $element.on("keydown.psls", handleInputNavigation);
+      $element.on("input.psls", handleInput);
 
+      function handleInputNavigation(e) {
         switch (e.key) {
           case 'ArrowDown':
           case 'Down':
-            if (currentIndex < items.length - 1) {
-              currentIndex += 1;
-              items.eq(currentIndex).attr('tabindex', '0').focus();
-            } else {
-              element.focusToInput();
-            }
             e.preventDefault();
+            if ($items.length > 0) {
+              currentIndex = 0;
+              $items.eq(currentIndex).attr('tabindex', '0').focus();
+            }
+            break;
+          case 'ArrowUp':
+          case 'Up':
+            e.preventDefault();
+            if ($items.length > 0) {
+              currentIndex = $items.length - 1;
+              $items.eq(currentIndex).attr('tabindex', '0').focus();
+            }
             break;
           case 'Escape':
           case 'Esc':
             e.preventDefault();
             element.closeDropdown();
             break;
-          case 'Up':
+        }
+      }
+
+      function handleDropdownNavigation(e) {
+        switch (e.key) {
+          case 'ArrowDown':
+          case 'Down':
+            e.preventDefault();
+            if (currentIndex < $items.length - 1) {
+              currentIndex++;
+              $items.eq(currentIndex).attr('tabindex', '0').focus();
+            } else {
+              element.focusToInput();
+            }
+            break;
           case 'ArrowUp':
+          case 'Up':
+            e.preventDefault();
             if (currentIndex > 0) {
-              currentIndex -= 1;
-              items.eq(currentIndex).attr('tabindex', '0').focus();
+              currentIndex--;
+              $items.eq(currentIndex).attr('tabindex', '0').focus();
             } else {
               element.focusToInput();
             }
-            e.preventDefault();
             break;
-          default:
+          case 'Enter':
+            e.preventDefault();
+            if (currentIndex > -1) {
+              $items.eq(currentIndex)[0].click();
+            }
             break;
         }
-      });
+      }
 
-      $(element).on("keydown", function (e) {
-        if (items.length) {
-          items.attr('tabindex', '-1');
+      function handleInput() {
+        if ($element.val().length < element.options.input_min_chars) {
+          element.closeDropdown();
+          return;
         }
-
-        switch (e.key) {
-          case 'ArrowDown':
-          case 'Down':
-            currentIndex = 0;
-            items.eq(currentIndex).attr('tabindex', '0').focus();
-            e.preventDefault();
-            break;
-          case 'Escape':
-          case 'Esc':
-            e.preventDefault();
-            element.closeDropdown();
-            break;
-          case 'Up':
-          case 'ArrowUp':
-            currentIndex = items.length - 1;
-            items.eq(currentIndex).attr('tabindex', '0').focus();
-            e.preventDefault();
-            break;
-          default:
-            break;
-        }
-      });
-
-      $(element).on("input", function (e) {
-        if ($(element).val().length < this.options.input_min_chars) return;
         clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function () { element.request(); }, this.options.input_delay);
-      });
+        debounceTimer = setTimeout(element.request, element.options.input_delay);
+      }
 
-      this.focusToInput = function () {
+      // Plugin methods
+      element.focusToInput = function () {
         currentIndex = -1;
         canRunFocus = false;
-        $(element).focus();
-        canRunFocus = true;
+        $element.trigger('focus');
+        setTimeout(() => canRunFocus = true, 100);
       };
 
-      this.closeDropdown = function () {
+      element.closeDropdown = function () {
         $dropdown.removeClass("show");
-        $(element).attr("aria-expanded", "false");
-        canRunFocus = true;
+        $element.attr("aria-expanded", "false");
       };
 
-      this.showDropdown = function () {
+      element.showDropdown = function () {
         $dropdown.html('<li><span class="ps-live-search-item-loading"><i class="fa-solid fa-circle-notch fa-spin"></i></span></li>');
         $dropdown.addClass("show");
-        $(element).attr("aria-expanded", "true");
+        $element.attr("aria-expanded", "true");
         currentIndex = -1;
       };
 
-      this.request = function () {
-        var query = $(element).val();
-
-        if (query.length > 0) {
+      element.request = function () {
+        var query = $element.val();
+        if (query.length > 0 && typeof element.source === 'function') {
           element.showDropdown();
-
-          this.source(query, $.proxy(this.response, this));
+          element.source(query, $.proxy(element.response, element));
         }
       };
 
-      this.response = function (json) {
+      element.response = function (json) {
         var html = "";
-        var url_more = $('base').attr('href') + 'index.php?route=product/search&language=' + $dropdown.attr('data-lang') + '&search=' + encodeURIComponent(json.query);
+        var url_more = $('base').attr('href') + 'index.php?route=product/search&language=' +
+          $dropdown.attr('data-lang') + '&search=' + encodeURIComponent(json.query);
 
         html += '<li><span class="ps-live-search-subheader">' + this.translations.text_showing_results + '</span></li>';
 
@@ -179,9 +196,11 @@
 
         $dropdown.html(html);
 
-        $('#ps-live-search-query').text(json.query);
+        $dropdown.find('.ps-live-search-subheader > output').text(json.query);
 
-        items = $dropdown.find(".ps-live-search-item");
+        $items = $dropdown.find(".ps-live-search-item");
+
+        $items.attr('tabindex', '-1');
       };
     });
   };
