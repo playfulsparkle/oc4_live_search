@@ -88,6 +88,7 @@
 }
 
 .ps-live-search-list .ps-live-search-subheader > output {
+    display: inline-block;
     font-weight: bold;
     color: var(--bs-body-color);
 }
