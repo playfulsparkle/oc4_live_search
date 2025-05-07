@@ -48,7 +48,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
             <ul id="ps-live-search" class="ps-live-search-list" data-lang="{{ language }}"></ul>
             <script>
                 $('#ps-live-search-input').pslivesearch({
-                    'source': function (request, response) {
+                    source: function (request, response) {
                         $.ajax({
                             url: 'index.php?route=extension/ps_live_search/module/ps_live_search{{ oc4_separator }}autocomplete&search=' + encodeURIComponent(request),
                             dataType: 'json',
@@ -57,21 +57,18 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                             }
                         });
                     },
-                    'select': function (item) {
-                        $('#ps-live-search-input').val(request);
+                    translations: {
+                        heading_products: '{{ heading_products }}',
+                        heading_categories: '{{ heading_categories }}',
+                        heading_manufacturers: '{{ heading_manufacturers }}',
+                        heading_informations: '{{ heading_informations }}',
+                        text_showing_results: '{{ text_showing_results }}',
+                        text_all_product_results: '{{ text_all_product_results }}',
+                        text_no_results: '{{ text_no_results }}',
                     },
-                    'translations': {
-                        'heading_products': '{{ heading_products }}',
-                        'heading_categories': '{{ heading_categories }}',
-                        'heading_manufacturers': '{{ heading_manufacturers }}',
-                        'heading_informations': '{{ heading_informations }}',
-                        'text_showing_results': '{{ text_showing_results }}',
-                        'text_all_product_results': '{{ text_all_product_results }}',
-                        'text_no_results': '{{ text_no_results }}',
-                    },
-                    'options': {
-                        'input_delay': {{ input_delay | default(100) }},
-                        'input_min_chars': {{ input_min_chars | default(1) }}
+                    options: {
+                        input_delay: {{ input_delay | default(100) }},
+                        input_min_chars: {{ input_min_chars | default(1) }}
                     }
                 });
             </script>
