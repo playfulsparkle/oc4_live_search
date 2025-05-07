@@ -3,7 +3,7 @@
     "description": "Enhance your store's search with real-time autocomplete, customizable results, and multi-language support for a seamless user experience.",
     "code": "ps_live_search",
     "license": "GPL",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Playful Sparkle",
     "link": "https://github.com/playfulsparkle/oc4_live_search.git"
   }

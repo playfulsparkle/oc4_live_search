@@ -1,6 +1,6 @@
 {
   "name": "oc4_live_search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Playful Sparkle - Live Search for OpenCart 4",
   "main": "index.js",
   "scripts": {
