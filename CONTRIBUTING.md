@@ -29,7 +29,7 @@ To contribute effectively, ensure you have:
 
 To report an issue:
 
-1. Review the [existing issues](https://github.com/playfulsparkle/oc4_live_search_pro/issues) to avoid duplicates.
+1. Review the [existing issues](https://github.com/playfulsparkle/oc4_live_search/issues) to avoid duplicates.
 2. Provide detailed information, including:
    - OpenCart version
    - Steps to reproduce the issue
@@ -122,5 +122,5 @@ We value and acknowledge significant contributions. Contributors may be recogniz
 
 If you have any questions or need assistance, feel free to reach out via:
 
-- [GitHub Issues](https://github.com/playfulsparkle/oc4_live_search_pro/issues)
+- [GitHub Issues](https://github.com/playfulsparkle/oc4_live_search/issues)
 - [support@playfulsparkle.com](mailto:support@playfulsparkle.com)
