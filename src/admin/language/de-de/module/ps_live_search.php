@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Häufige Fehler beheben';
 $_['heading_getting_started']              = 'Erste Schritte';
 $_['heading_setup']                        = 'Einrichtung des Live Search';
 $_['heading_troubleshot']                  = 'Häufige Fehlersuche';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Produktpreis anzeigen';
 $_['entry_width']                          = 'Breite';
 $_['entry_height']                         = 'Höhe';
 $_['entry_input_min_chars']                = 'Min. Eingabe';
-
-// Button
-$_['button_fix_event_handler']             = 'Ereignishandler beheben';
 
 // Help
 $_['help_input_delay']                     = 'Diese Einstellung legt die Verzögerungszeit (in Millisekunden) fest, die zwischen der Eingabe eines Zeichens durch den Benutzer und der Übermittlung der Daten an den Server liegt. Eine Erhöhung dieser Verzögerung kann helfen, die Anzahl der Anfragen während der schnellen Eingabe zu reduzieren und die Leistung sowie die Serverreaktionszeit zu verbessern.';

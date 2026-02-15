@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Corregir errores comunes';
 $_['heading_getting_started']              = 'Comenzando';
 $_['heading_setup']                        = 'Configurando Live Search';
 $_['heading_troubleshot']                  = 'Solución de problemas comunes';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Mostrar el precio del producto';
 $_['entry_width']                          = 'Ancho';
 $_['entry_height']                         = 'Alto';
 $_['entry_input_min_chars']                = 'Mín. caracteres de entrada';
-
-// Button
-$_['button_fix_event_handler']             = 'Corregir manejador de eventos';
 
 // Help
 $_['help_input_delay']                     = 'Este ajuste especifica el tiempo de retraso (en milisegundos) entre cuando el usuario presiona una tecla y cuando los datos son enviados al servidor. Aumentar este retraso puede ayudar a reducir la cantidad de solicitudes enviadas durante una entrada rápida, mejorando el rendimiento y los tiempos de respuesta del servidor.';

@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Gyakori hibák javítása';
 $_['heading_getting_started']              = 'Kezdő lépések';
 $_['heading_setup']                        = 'Live Search beállítása';
 $_['heading_troubleshot']                  = 'Gyakori hibakeresési lépések';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Termékár megjelenítése';
 $_['entry_width']                          = 'Szélesség';
 $_['entry_height']                         = 'Magasság';
 $_['entry_input_min_chars']                = 'Min. karakter';
-
-// Button
-$_['button_fix_event_handler']             = 'Eseménykezelő javítása';
 
 // Help
 $_['help_input_delay']                     = 'Ez a beállítás meghatározza a késleltetési időt (ezredmásodpercben), amely a felhasználó billentyűleütése és az adatok kiszolgálóhoz történő küldése között telik el. Ennek a késleltetésnek a növelése csökkentheti a gyors gépelés során küldött kérések számát, javítva a teljesítményt és a kiszolgáló válaszidejét.';

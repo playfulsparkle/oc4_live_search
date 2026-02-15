@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Wyszukiwanie na żywo';
-$_['heading_fix']                          = 'Napraw powszechne błędy';
 $_['heading_getting_started']              = 'Pierwsze kroki';
 $_['heading_setup']                        = 'Konfiguracja Wyszukiwania na żywo';
 $_['heading_troubleshot']                  = 'Częste problemy';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Pokaż cenę produktu';
 $_['entry_width']                          = 'Szerokość';
 $_['entry_height']                         = 'Wysokość';
 $_['entry_input_min_chars']                = 'Min. znaków';
-
-// Button
-$_['button_fix_event_handler']             = 'Napraw obsługę zdarzeń';
 
 // Help
 $_['help_input_delay']                     = 'To ustawienie określa czas opóźnienia (w milisekundach) między naciśnięciem klawisza przez użytkownika a wysłaniem danych na serwer. Zwiększenie tego opóźnienia może pomóc zmniejszyć liczbę żądań wysyłanych podczas szybkiego wprowadzania tekstu, poprawiając wydajność i czas odpowiedzi serwera.';

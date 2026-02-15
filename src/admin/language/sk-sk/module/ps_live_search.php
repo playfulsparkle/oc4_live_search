@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Oprava bežných chýb';
 $_['heading_getting_started']              = 'Začíname';
 $_['heading_setup']                        = 'Nastavenie Live Search';
 $_['heading_troubleshot']                  = 'Bežné problémy';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Zobraziť cenu produktu';
 $_['entry_width']                          = 'Šírka';
 $_['entry_height']                         = 'Výška';
 $_['entry_input_min_chars']                = 'Min. počet znakov';
-
-// Button
-$_['button_fix_event_handler']             = 'Opraviť spracovateľ udalostí';
 
 // Help
 $_['help_input_delay']                     = 'Toto nastavenie určuje čas oneskorenia (v milisekundách) medzi tým, keď používateľ stlačí kláves a keď sú údaje odoslané na server. Zvyšovanie tohto oneskorenia môže pomôcť znížiť počet požiadaviek odoslaných počas rýchleho zadávania, čím sa zlepší výkon a časy odozvy servera.';

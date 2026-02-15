@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Fix common bugs';
 $_['heading_getting_started']              = 'Getting Started';
 $_['heading_setup']                        = 'Setting Up Live Search';
 $_['heading_troubleshot']                  = 'Common Troubleshooting';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Show Product Price';
 $_['entry_width']                          = 'Width';
 $_['entry_height']                         = 'Height';
 $_['entry_input_min_chars']                = 'Min. input';
-
-// Button
-$_['button_fix_event_handler']             = 'Fix Event Handler';
 
 // Help
 $_['help_input_delay']                     = 'This setting specifies the delay time (in milliseconds) between when the user types a key and when the data is sent to the server. Increasing this delay can help reduce the number of requests sent during rapid input, improving performance and server response times.';

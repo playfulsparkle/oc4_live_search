@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Correggere i comuni errori';
 $_['heading_getting_started']              = 'Iniziare';
 $_['heading_setup']                        = 'Configurazione di Live Search';
 $_['heading_troubleshot']                  = 'Risoluzione dei problemi comuni';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Mostrare il prezzo del prodotto';
 $_['entry_width']                          = 'Larghezza';
 $_['entry_height']                         = 'Altezza';
 $_['entry_input_min_chars']                = 'Min. caratteri input';
-
-// Button
-$_['button_fix_event_handler']             = 'Correggi Event Handler';
 
 // Help
 $_['help_input_delay']                     = 'Questa impostazione specifica il tempo di ritardo (in millisecondi) tra la digitazione di un tasto e l\'invio dei dati al server. Aumentando il ritardo si può ridurre il numero di richieste inviate durante l\'input rapido, migliorando così le prestazioni e i tempi di risposta del server.';

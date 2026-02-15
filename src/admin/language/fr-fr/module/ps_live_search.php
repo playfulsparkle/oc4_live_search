@@ -1,7 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_fix']                          = 'Corriger les erreurs courantes';
 $_['heading_getting_started']              = 'Démarrage';
 $_['heading_setup']                        = 'Configuration de Live Search';
 $_['heading_troubleshot']                  = 'Dépannage courant';
@@ -46,9 +45,6 @@ $_['entry_product_price']                  = 'Afficher le prix du produit';
 $_['entry_width']                          = 'Largeur';
 $_['entry_height']                         = 'Hauteur';
 $_['entry_input_min_chars']                = 'Caractères minimum';
-
-// Button
-$_['button_fix_event_handler']             = 'Corriger le gestionnaire d\'événements';
 
 // Help
 $_['help_input_delay']                     = 'Ce paramètre spécifie le délai (en millisecondes) entre la frappe d\'une touche par l\'utilisateur et l\'envoi des données au serveur. Augmenter ce délai peut aider à réduire le nombre de requêtes envoyées lors de saisies rapides, améliorant ainsi les performances et les temps de réponse du serveur.';
