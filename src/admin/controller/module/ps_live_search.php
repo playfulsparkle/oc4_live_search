@@ -162,45 +162,41 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
     public function install(): void
     {
-        if ($this->user->hasPermission('modify', 'extension/module')) {
-            $this->load->model('setting/setting');
+        $this->load->model('setting/setting');
 
-            $data = [
-                'module_ps_live_search_input_delay' => 100,
-                'module_ps_live_search_input_min_chars' => 1,
-                'module_ps_live_search_product_status' => 1,
-                'module_ps_live_search_product_description' => 1,
-                'module_ps_live_search_product_description_length' => 100,
-                'module_ps_live_search_product_image' => 1,
-                'module_ps_live_search_product_image_width' => 64,
-                'module_ps_live_search_product_image_height' => 64,
-                'module_ps_live_search_product_price' => 1,
-                'module_ps_live_search_category_status' => 1,
-                'module_ps_live_search_category_image' => 1,
-                'module_ps_live_search_category_image_width' => 64,
-                'module_ps_live_search_category_image_height' => 64,
-                'module_ps_live_search_manufacturer_status' => 1,
-                'module_ps_live_search_manufacturer_image' => 1,
-                'module_ps_live_search_manufacturer_image_width' => 64,
-                'module_ps_live_search_manufacturer_image_height' => 64,
-                'module_ps_live_search_information_status' => 1,
-            ];
+        $data = [
+            'module_ps_live_search_input_delay' => 100,
+            'module_ps_live_search_input_min_chars' => 1,
+            'module_ps_live_search_product_status' => 1,
+            'module_ps_live_search_product_description' => 1,
+            'module_ps_live_search_product_description_length' => 100,
+            'module_ps_live_search_product_image' => 1,
+            'module_ps_live_search_product_image_width' => 64,
+            'module_ps_live_search_product_image_height' => 64,
+            'module_ps_live_search_product_price' => 1,
+            'module_ps_live_search_category_status' => 1,
+            'module_ps_live_search_category_image' => 1,
+            'module_ps_live_search_category_image_width' => 64,
+            'module_ps_live_search_category_image_height' => 64,
+            'module_ps_live_search_manufacturer_status' => 1,
+            'module_ps_live_search_manufacturer_image' => 1,
+            'module_ps_live_search_manufacturer_image_width' => 64,
+            'module_ps_live_search_manufacturer_image_height' => 64,
+            'module_ps_live_search_information_status' => 1,
+        ];
 
-            $this->model_setting_setting->editSetting('module_ps_live_search', $data);
+        $this->model_setting_setting->editSetting('module_ps_live_search', $data);
 
-            $this->load->model('setting/event');
+        $this->load->model('setting/event');
 
-            $this->_registerEvents();
-        }
+        $this->_registerEvents();
     }
 
     public function uninstall(): void
     {
-        if ($this->user->hasPermission('modify', 'extension/module')) {
-            $this->load->model('setting/event');
+        $this->load->model('setting/event');
 
-            $this->_unregisterEvents();
-        }
+        $this->_unregisterEvents();
     }
 
     private function _unregisterEvents(): void
