@@ -17,34 +17,24 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
         $views = [];
 
         $views[] = [
-            'search' => '<div id="search" class="',
-            'replace' => '<div id="search" class="ps-live-search-container '
+            'search' => 'id="search" class="',
+            'replace' => 'id="search" class="ps-live-search-container '
+        ];
+
+        $views[] = [ // OC >= 4.1.0.0
+            'search' => 'method="post" class="',
+            'replace' => 'method="post" class="ps-live-search-container '
         ];
 
         $views[] = [
-            'search' => '<input type="text" name="search"',
-            'replace' => '<input type="text" name="search" id="ps-live-search-input" data-live-search-target="ps-live-search"'
+            'search' => 'name="search"',
+            'replace' => 'name="search" id="ps-live-search-input" data-live-search-target="ps-live-search"'
         ];
 
-        if (version_compare(VERSION, '4.0.0.0', '=')) {
-            $views[] = [
-                'search' => '<i class="fas fa-search"></i></button>',
-                'replace' => $this->searchListTpl('<i class="fas fa-search"></i></button>')
-            ];
-        } else {
-            $views[] = [
-                'search' => '<i class="fa-solid fa-magnifying-glass"></i></button>',
-                'replace' => $this->searchListTpl('<i class="fa-solid fa-magnifying-glass"></i></button>')
-            ];
-        }
-
-        return $views;
-    }
-
-    private function searchListTpl(string $search): string
-    {
-        return <<<HTML
-            {$search}
+        $views[] = [
+            'search' => '</button>',
+            'replace' => <<<HTML
+            </button>
             <ul id="ps-live-search" class="ps-live-search-list" data-lang="{{ language }}"></ul>
             <script>
                 $('#ps-live-search-input').pslivesearch({
@@ -72,7 +62,10 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                     }
                 });
             </script>
-            HTML;
+            HTML
+        ];
+
+        return $views;
     }
 
     /**
