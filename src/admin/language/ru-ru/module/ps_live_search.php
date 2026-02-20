@@ -8,7 +8,7 @@ $_['text_extension']                       = 'Расширения';
 $_['text_success']                         = 'Успех: Вы успешно изменили модуль Live Search!';
 $_['text_filter_success']                  = 'Успех: Неиспользуемые фильтры были успешно удалены!';
 $_['text_edit']                            = 'Редактирование модуля Live Search';
-$_['text_contact']                         = '<p>Для получения дополнительной помощи, пожалуйста, свяжитесь с нашей службой поддержки:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Документация пользователя</a></li></ul>';
+$_['text_contact']                         = '<p>Для получения дополнительной помощи, пожалуйста, свяжитесь с нашей службой поддержки:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Руководство пользователя</a></li></ul>';
 
 // Tab
 $_['tab_general']                          = 'Общие';

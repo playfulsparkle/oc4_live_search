@@ -8,7 +8,7 @@ $_['text_extension']                       = 'Επεκτάσεις';
 $_['text_success']                         = 'Επιτυχία: Τροποποιήσατε το module Ζωντανής Αναζήτησης!';
 $_['text_filter_success']                  = 'Επιτυχία: Τα αχρησιμοποίητα φίλτρα αφαιρέθηκαν επιτυχώς!';
 $_['text_edit']                            = 'Επεξεργασία Module Ζωντανής Αναζήτησης';
-$_['text_contact']                         = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Επικοινωνία:</strong> <a href="mailto:%s">%s</a></li><li><strong>Τεκμηρίωση:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Εγχειρίδιο Χρήσης</a></li></ul>';
+$_['text_contact']                         = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Επικοινωνία:</strong> <a href="mailto:%s">%s</a></li><li><strong>Τεκμηρίωση:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Τεκμηρίωση χρήστη</a></li></ul>';
 
 // Tab
 $_['tab_general']                          = 'Γενικά';
