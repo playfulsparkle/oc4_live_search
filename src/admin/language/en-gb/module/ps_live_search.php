@@ -1,10 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_getting_started']              = 'Getting Started';
-$_['heading_setup']                        = 'Setting Up Live Search';
-$_['heading_troubleshot']                  = 'Common Troubleshooting';
-$_['heading_faq']                          = 'FAQ';
 $_['heading_contact']                      = 'Contact Support';
 
 // Text
@@ -12,10 +8,6 @@ $_['text_extension']                       = 'Extensions';
 $_['text_success']                         = 'Success: You have modified Live Search module!';
 $_['text_filter_success']                  = 'Success: Unused filters were removed successfully!';
 $_['text_edit']                            = 'Edit Live Search Module';
-$_['text_getting_started']                 = '<p><strong>Overview:</strong> Playful Sparkle - Live Search is an advanced search extension for OpenCart 4, designed to display search results dynamically in a dropdown as the user types. It supports product, category, manufacturer, and information page searches, with customizable thumbnail sizes, description lengths, and delay settings for optimal user experience.</p><p><strong>Requirements:</strong> OpenCart 4.x+, PHP 7.4+ or higher</p>';
-$_['text_setup']                           = '<ul><li><strong>General Settings:</strong> Configure the input delay (default: 100 ms) to control the time between keystrokes and search result display.</li><li><strong>Product Settings:</strong><ul><li>Enable/Disable product search results.</li><li>Enable/Disable display of product descriptions; set maximum description length (default: 100 characters).</li><li>Enable/Disable product thumbnails; set thumbnail width and height (min: 16 px, max: 128 px).</li></ul></li><li><strong>Category Settings:</strong><ul><li>Enable/Disable category search results.</li><li>Enable/Disable category thumbnails; set thumbnail dimensions (min: 16 px, max: 128 px).</li></ul></li><li><strong>Manufacturer Settings:</strong><ul><li>Enable/Disable manufacturer search results.</li><li>Enable/Disable manufacturer thumbnails; set thumbnail dimensions (min: 16 px, max: 128 px).</li></ul></li><li><strong>Information Page Settings:</strong><ul><li>Enable/Disable information page search results.</li></ul></li></ul>';
-$_['text_troubleshot']                     = '<ul><li><strong>Live search does not work:</strong> Click the "Fix Event Handler" button, verify the input delay setting, and ensure the module is enabled.</li><li><strong>Specific results (Product, Category, Manufacturer, Information) are missing:</strong> Confirm that the relevant result category is enabled in the settings.</li></ul>';
-$_['text_faq']                             = '<details><summary>What is the default input delay?</summary> The default input delay is set to 100 milliseconds.</details><details><summary>How do I set the maximum thumbnail size?</summary> Thumbnail sizes can be set within a range of 16 to 128 pixels for width and height.</details><details><summary>How do I limit the product description length?</summary> The description length can be adjusted in settings; the default is 100 characters.</details><details><summary>Why aren’t some results showing in the dropdown?</summary> Ensure the specific result type (Product, Category, Manufacturer, or Information) is enabled in the module settings.</details>';
 $_['text_contact']                         = '<p>For further assistance, please reach out to our support team:</p><ul><li><strong>Contact:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentation:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">User Documentation</a></li></ul>';
 
 // Tab

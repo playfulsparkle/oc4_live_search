@@ -1,10 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_getting_started']              = 'Začínáme';
-$_['heading_setup']                        = 'Nastavení Live Search';
-$_['heading_troubleshot']                  = 'Běžné řešení problémů';
-$_['heading_faq']                          = 'Často kladené otázky';
 $_['heading_contact']                      = 'Kontaktujte podporu';
 
 // Text
@@ -12,10 +8,6 @@ $_['text_extension']                       = 'Rozšíření';
 $_['text_success']                         = 'Úspěch: Modul Live Search byl upraven!';
 $_['text_filter_success']                  = 'Úspěch: Nepoužívané filtry byly úspěšně odstraněny!';
 $_['text_edit']                            = 'Upravit modul Live Search';
-$_['text_getting_started']                 = '<p><strong>Přehled:</strong> Playful Sparkle - Live Search je pokročilé vyhledávací rozšíření pro OpenCart 4, které zobrazuje výsledky vyhledávání dynamicky v rozbalovacím menu během psaní. Podporuje vyhledávání produktů, kategorií, výrobců a informačních stránek s nastavitelnými velikostmi miniatur, délkou popisů a zpožděním pro optimální uživatelskou zkušenost.</p><p><strong>Požadavky:</strong> OpenCart 4.x+, PHP 7.4+ nebo vyšší</p>';
-$_['text_setup']                           = '<ul><li><strong>Obecná nastavení:</strong> Nastavte zpoždění vstupu (výchozí: 100 ms) pro kontrolu času mezi stiskem klávesy a zobrazením výsledků vyhledávání.</li><li><strong>Nastavení produktu:</strong><ul><li>Povolit/zakázat výsledky vyhledávání produktů.</li><li>Povolit/zakázat zobrazení popisů produktů; nastavte maximální délku popisu (výchozí: 100 znaků).</li><li>Povolit/zakázat miniatury produktů; nastavte šířku a výšku miniatury (min: 16 px, max: 128 px).</li></ul></li><li><strong>Nastavení kategorie:</strong><ul><li>Povolit/zakázat výsledky vyhledávání kategorií.</li><li>Povolit/zakázat miniatury kategorií; nastavte rozměry miniatury (min: 16 px, max: 128 px).</li></ul></li><li><strong>Nastavení výrobce:</strong><ul><li>Povolit/zakázat výsledky vyhledávání výrobců.</li><li>Povolit/zakázat miniatury výrobců; nastavte rozměry miniatury (min: 16 px, max: 128 px).</li></ul></li><li><strong>Nastavení informačních stránek:</strong><ul><li>Povolit/zakázat výsledky vyhledávání informačních stránek.</li></ul></li></ul>';
-$_['text_troubleshot']                     = '<ul><li><strong>Live search nefunguje:</strong> Klikněte na tlačítko "Opravit správce událostí", ověřte nastavení zpoždění vstupu a ujistěte se, že modul je povolen.</li><li><strong>Chybí specifické výsledky (produkt, kategorie, výrobce, informace):</strong> Ověřte, že příslušná kategorie výsledků je povolena v nastavení.</li></ul>';
-$_['text_faq']                             = '<details><summary>Jaké je výchozí zpoždění vstupu?</summary> Výchozí zpoždění vstupu je nastaveno na 100 milisekund.</details><details><summary>Jak nastavím maximální velikost miniatury?</summary> Velikosti miniatur lze nastavit v rozmezí 16 až 128 pixelů na šířku a výšku.</details><details><summary>Jak mohu omezit délku popisu produktu?</summary> Délku popisu lze upravit v nastavení; výchozí hodnota je 100 znaků.</details><details><summary>Proč se některé výsledky nezobrazují v rozbalovacím menu?</summary> Ujistěte se, že specifický typ výsledku (produkt, kategorie, výrobce nebo informace) je povolen v nastavení modulu.</details>';
 $_['text_contact']                         = '<p>Pro další pomoc se prosím obraťte na náš tým podpory:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentace:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Dokumentace pro uživatele</a></li></ul>';
 
 // Tab

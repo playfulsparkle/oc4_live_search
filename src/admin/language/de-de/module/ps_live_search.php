@@ -1,10 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Live Search';
-$_['heading_getting_started']              = 'Erste Schritte';
-$_['heading_setup']                        = 'Einrichtung des Live Search';
-$_['heading_troubleshot']                  = 'Häufige Fehlersuche';
-$_['heading_faq']                          = 'Häufig gestellte Fragen';
 $_['heading_contact']                      = 'Support kontaktieren';
 
 // Text
@@ -12,10 +8,6 @@ $_['text_extension']                       = 'Erweiterungen';
 $_['text_success']                         = 'Erfolg: Sie haben das Live Search-Modul erfolgreich geändert!';
 $_['text_filter_success']                  = 'Erfolg: Nicht verwendete Filter wurden erfolgreich entfernt!';
 $_['text_edit']                            = 'Live Search-Modul bearbeiten';
-$_['text_getting_started']                 = '<p><strong>Überblick:</strong> Playful Sparkle - Live Search ist eine erweiterte Sucherweiterung für OpenCart 4, die Suchergebnisse dynamisch in einem Dropdown-Menü anzeigt, während der Benutzer tippt. Sie unterstützt die Suche nach Produkten, Kategorien, Herstellern und Informationsseiten, mit anpassbaren Miniaturbildgrößen, Beschreibungs-Längen und Verzögerungseinstellungen für ein optimales Benutzererlebnis.</p><p><strong>Voraussetzungen:</strong> OpenCart 4.x+, PHP 7.4+ oder höher</p>';
-$_['text_setup']                           = '<ul><li><strong>Allgemeine Einstellungen:</strong> Konfigurieren Sie die Eingabeverzögerung (Standard: 100 ms), um die Zeit zwischen Tasteneingaben und der Anzeige der Suchergebnisse zu steuern.</li><li><strong>Produkteinstellungen:</strong><ul><li>Aktivieren/Deaktivieren von Produktsuchergebnissen.</li><li>Aktivieren/Deaktivieren der Produktbeschreibungen; maximale Beschreibungslänge einstellen (Standard: 100 Zeichen).</li><li>Aktivieren/Deaktivieren von Produkt-Miniaturansichten; Breite und Höhe der Miniaturansicht festlegen (mindestens: 16 px, maximal: 128 px).</li></ul></li><li><strong>Kategorieeinstellungen:</strong><ul><li>Aktivieren/Deaktivieren von Kategorie-Suchergebnissen.</li><li>Aktivieren/Deaktivieren der Kategorieminiaturansichten; Abmessungen der Miniaturansichten festlegen (mindestens: 16 px, maximal: 128 px).</li></ul></li><li><strong>Herstellereinstellungen:</strong><ul><li>Aktivieren/Deaktivieren von Hersteller-Suchergebnissen.</li><li>Aktivieren/Deaktivieren der Herstellerminiaturansichten; Abmessungen der Miniaturansichten festlegen (mindestens: 16 px, maximal: 128 px).</li></ul></li><li><strong>Informationsseiteneinstellungen:</strong><ul><li>Aktivieren/Deaktivieren von Informationsseitensuchergebnissen.</li></ul></li></ul>';
-$_['text_troubleshot']                     = '<ul><li><strong>Live-Suche funktioniert nicht:</strong> Klicken Sie auf die Schaltfläche „Ereignis-Handler beheben“, überprüfen Sie die Eingabeverzögerungseinstellung und stellen Sie sicher, dass das Modul aktiviert ist.</li><li><strong>Bestimmte Ergebnisse (Produkt, Kategorie, Hersteller, Information) fehlen:</strong> Stellen Sie sicher, dass die entsprechende Ergebniskategorie in den Einstellungen aktiviert ist.</li></ul>';
-$_['text_faq']                             = '<details><summary>Was ist die Standard-Eingabeverzögerung?</summary> Die Standard-Eingabeverzögerung beträgt 100 Millisekunden.</details><details><summary>Wie lege ich die maximale Miniaturbildgröße fest?</summary> Die Miniaturbildgrößen können in einem Bereich von 16 bis 128 Pixel für Breite und Höhe eingestellt werden.</details><details><summary>Wie beschränke ich die Länge der Produktbeschreibung?</summary> Die Beschreibungslänge kann in den Einstellungen angepasst werden; der Standardwert beträgt 100 Zeichen.</details><details><summary>Warum werden einige Ergebnisse im Dropdown-Menü nicht angezeigt?</summary> Stellen Sie sicher, dass der spezifische Ergebnistyp (Produkt, Kategorie, Hersteller oder Information) in den Moduleinstellungen aktiviert ist.</details>';
 $_['text_contact']                         = '<p>Für weitere Unterstützung wenden Sie sich bitte an unser Support-Team:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentation:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Benutzerdokumentation</a></li></ul>';
 
 // Tab

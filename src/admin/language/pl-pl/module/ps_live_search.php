@@ -1,10 +1,6 @@
 <?php
 // Heading
 $_['heading_title']                        = 'Playful Sparkle - Wyszukiwanie na żywo';
-$_['heading_getting_started']              = 'Pierwsze kroki';
-$_['heading_setup']                        = 'Konfiguracja Wyszukiwania na żywo';
-$_['heading_troubleshot']                  = 'Częste problemy';
-$_['heading_faq']                          = 'FAQ';
 $_['heading_contact']                      = 'Kontakt z pomocą techniczną';
 
 // Text
@@ -12,10 +8,6 @@ $_['text_extension']                       = 'Rozszerzenia';
 $_['text_success']                         = 'Sukces: Zmodyfikowano moduł Wyszukiwania na żywo!';
 $_['text_filter_success']                  = 'Sukces: Nieużywane filtry zostały pomyślnie usunięte!';
 $_['text_edit']                            = 'Edytuj moduł Wyszukiwania na żywo';
-$_['text_getting_started']                 = '<p><strong>Przegląd:</strong> Playful Sparkle - Wyszukiwanie na żywo to zaawansowane rozszerzenie wyszukiwania dla OpenCart 4, zaprojektowane do dynamicznego wyświetlania wyników wyszukiwania w rozwijanym menu podczas pisania przez użytkownika. Obsługuje wyszukiwanie produktów, kategorii, producentów i stron informacyjnych, z konfigurowalnymi rozmiarami miniatur, długościami opisów i ustawieniami opóźnienia dla optymalnego doświadczenia użytkownika.</p><p><strong>Wymagania:</strong> OpenCart 4.x+, PHP 7.4+ lub nowszy</p>';
-$_['text_setup']                           = '<ul><li><strong>Ustawienia ogólne:</strong> Skonfiguruj opóźnienie wprowadzania (domyślnie: 100 ms), aby kontrolować czas między naciśnięciami klawiszy a wyświetlaniem wyników wyszukiwania.</li><li><strong>Ustawienia produktów:</strong><ul><li>Włącz/Wyłącz wyniki wyszukiwania produktów.</li><li>Włącz/Wyłącz wyświetlanie opisów produktów; ustaw maksymalną długość opisu (domyślnie: 100 znaków).</li><li>Włącz/Wyłącz miniatury produktów; ustaw szerokość i wysokość miniatury (min: 16 px, max: 128 px).</li></ul></li><li><strong>Ustawienia kategorii:</strong><ul><li>Włącz/Wyłącz wyniki wyszukiwania kategorii.</li><li>Włącz/Wyłącz miniatury kategorii; ustaw wymiary miniatur (min: 16 px, max: 128 px).</li></ul></li><li><strong>Ustawienia producentów:</strong><ul><li>Włącz/Wyłącz wyniki wyszukiwania producentów.</li><li>Włącz/Wyłącz miniatury producentów; ustaw wymiary miniatur (min: 16 px, max: 128 px).</li></ul></li><li><strong>Ustawienia stron informacyjnych:</strong><ul><li>Włącz/Wyłącz wyniki wyszukiwania stron informacyjnych.</li></ul></li></ul>';
-$_['text_troubleshot']                     = '<ul><li><strong>Wyszukiwanie na żywo nie działa:</strong> Kliknij przycisk "Napraw obsługę zdarzeń", sprawdź ustawienie opóźnienia wprowadzania i upewnij się, że moduł jest włączony.</li><li><strong>Brakuje określonych wyników (Produkt, Kategoria, Producent, Informacje):</strong> Sprawdź, czy odpowiednia kategoria wyników jest włączona w ustawieniach.</li></ul>';
-$_['text_faq']                             = '<details><summary>Jakie jest domyślne opóźnienie wprowadzania?</summary> Domyślne opóźnienie wprowadzania jest ustawione na 100 milisekund.</details><details><summary>Jak ustawić maksymalny rozmiar miniatur?</summary> Rozmiary miniatur można ustawić w zakresie od 16 do 128 pikseli szerokości i wysokości.</details><details><summary>Jak ograniczyć długość opisu produktu?</summary> Długość opisu można dostosować w ustawieniach; domyślna to 100 znaków.</details><details><summary>Dlaczego niektóre wyniki nie są wyświetlane w rozwijanym menu?</summary> Upewnij się, że określony typ wyniku (Produkt, Kategoria, Producent lub Informacje) jest włączony w ustawieniach modułu.</details>';
 $_['text_contact']                         = '<p>Aby uzyskać dalszą pomoc, skontaktuj się z naszym zespołem wsparcia:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentacja:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Dokumentacja użytkownika</a></li></ul>';
 
 // Tab
