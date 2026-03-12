@@ -40,7 +40,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Controller
 
         $data['breadcrumbs'][] = [
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('extension/module/ps_live_search', 'user_token=' . $this->session->data['user_token'], true),
+            'href' => $this->url->link('extension/ps_live_search/module/ps_live_search', 'user_token=' . $this->session->data['user_token'], true),
         ];
 
 
