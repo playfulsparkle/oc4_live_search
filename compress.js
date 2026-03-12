@@ -37,7 +37,6 @@ archive.directory("src/admin/", "admin");
 archive.directory("src/catalog/", "catalog");
 archive.file("src/install.json", { name: "install.json" });
 archive.file("src/installation.txt", { name: "installation.txt" });
-archive.file("LICENSE", { name: "license.txt" });
 
 archive.finalize();
 
