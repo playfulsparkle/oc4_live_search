@@ -8,20 +8,22 @@
   },
   "keywords": [
     "opencart",
-    "oc",
+    "opencart4",
     "playfulsparkle",
+    "autocomplete",
+    "quick search",
     "live search"
   ],
   "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
   "license": "GPL",
-  "dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playfulsparkle/oc4_live_search.git"
+  },
+  "devDependencies": {
     "archiver": "^7.0.1",
     "csso": "^5.0.5",
     "fs": "^0.0.1-security",
     "terser": "^5.36.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/playfulsparkle/oc4_live_search.git"
   }
 }
