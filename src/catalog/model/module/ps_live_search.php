@@ -40,7 +40,7 @@ class PsLiveSearch extends \Opencart\System\Engine\Model
                 $('#ps-live-search-input').pslivesearch({
                     source: function (request, response) {
                         $.ajax({
-                            url: 'index.php?route=extension/ps_live_search/module/ps_live_search{{ oc4_separator }}autocomplete&search=' + encodeURIComponent(request),
+                            url: 'index.php?route=extension/ps_live_search/module/ps_live_search{{ oc4_separator }}autocomplete&search=' + encodeURIComponent(request) + '&language={{ language }}',
                             dataType: 'json',
                             success: function (json) {
                                 response(json);
